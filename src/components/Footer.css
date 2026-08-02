@@ -4,11 +4,14 @@
   background: var(--color-bg-alt);
 }
 
-/* Іконки швидкого доступу — прості емблеми-посилання, без кнопкових рамок */
+/* Іконки швидкого доступу — прості емблеми-посилання, без кнопкових рамок.
+   За Figma підпис не обгортається в 111px, а центрується під іконкою одним
+   рядком (nowrap); ширина пункту підлаштовується під ширший з двох —
+   іконку чи підпис, — тому між пунктами потрібен запас по горизонталі. */
 .quick-access {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 20px 28px;
   padding: 32px 24px;
   justify-content: center;
 }
@@ -17,22 +20,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: 111px;
-  height: 111px;
+  flex-shrink: 0;
+  gap: 4px;
   text-align: center;
   color: var(--color-footer-icon);
 }
 
-.quick-access__item svg {
+.quick-access__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 111px;
+  height: 111px;
+  flex-shrink: 0;
+}
+
+.quick-access__icon svg {
   color: var(--color-footer-icon);
 }
 
 .quick-access__label {
+  white-space: nowrap;
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
+  color: var(--color-footer-icon);
 }
 
 .quick-access__item:hover {

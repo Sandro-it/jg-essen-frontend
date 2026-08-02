@@ -79,8 +79,9 @@ export const HOME_TILES = [
 
 // 6 іконок швидкого доступу у футері (спільні для всього сайту).
 // icon — назва компонента lucide-react (мапиться в Footer.jsx).
+// labelColor — за Figma підпис "Gottesdienste" чомусь #1F3A79, решта #134F82.
 export const QUICK_ACCESS_ITEMS = [
-  { key: 'gottesdienste', to: '/glaube-tradition', icon: 'Church' },
+  { key: 'gottesdienste', to: '/glaube-tradition', icon: 'Church', labelColor: '#1F3A79' },
   { key: 'veranstaltungen', to: '/veranstaltungen', icon: 'CalendarCheck' },
   { key: 'mitgliedschaft', to: '/unsere-gemeinde/mitgliedschaft', icon: 'Users' },
   { key: 'sozialeHilfe', to: '/soziale-hilfe', icon: 'HeartHandshake' },

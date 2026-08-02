@@ -17,13 +17,22 @@ export default function Footer() {
           const Icon = QUICK_ACCESS_ICONS[item.icon];
           return (
             <Link key={item.key} to={item.to} className="quick-access__item">
-              <Icon size={28} strokeWidth={1.75} aria-hidden="true" />
-              <span className="quick-access__label">{t(`quickAccess.${item.key}`)}</span>
+              <span className="quick-access__icon">
+                <Icon size={56} strokeWidth={1.5} aria-hidden="true" />
+              </span>
+              <span
+                className="quick-access__label"
+                style={item.labelColor ? { color: item.labelColor } : undefined}
+              >
+                {t(`quickAccess.${item.key}`)}
+              </span>
             </Link>
           );
         })}
         <Link to="/spenden" className="quick-access__item quick-access__item--donate">
-          <Gift size={28} strokeWidth={1.75} aria-hidden="true" />
+          <span className="quick-access__icon">
+            <Gift size={56} strokeWidth={1.5} aria-hidden="true" />
+          </span>
           <span className="quick-access__label">{t('nav.spenden')}</span>
         </Link>
       </div>
