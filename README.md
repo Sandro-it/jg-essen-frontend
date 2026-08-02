@@ -25,9 +25,10 @@ npm run dev
 - `src/components/SectionHub.jsx`, `SectionSubpage.jsx` — узагальнені компоненти для всіх розділів
   (UNSERE GEMEINDE, GLAUBE & TRADITION мають готовий дизайн; решта — заглушки з placeholder-текстом)
 - `src/pages/Aktuelles.jsx`, `Veranstaltungen.jsx` — новини/події з бекенду Strapi
-- `design-reference/` — референс-скріншоти макету з Figma (PNG) та ескіз структури сайту (PDF)
+- `design-reference/` — референс-скріншоти макету з Figma (PNG) та ескіз структури сайту (PDF);
+  локальна папка, у git не потрапляє (див. `.gitignore`)
 
 ## Дизайн
 
 Джерело істини — Figma-макет "Сайт Єврейської громади Ессен (Copy)". Референс-зображення
-експортовані в `design-reference/`.
+кладіть локально в `design-reference/` (не комітяться).

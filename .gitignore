@@ -13,6 +13,9 @@ dist-ssr
 *.local
 .env
 
+# Локальні референс-скріншоти макету з Figma (не в git-історії)
+design-reference/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
