@@ -86,26 +86,28 @@ export default function Home() {
                   minute: '2-digit',
                 });
                 return (
-                  <li key={event.id} className="home__event-card">
-                    <div className="home__event-date">
-                      <span className="home__event-day">{day}</span>
-                      <span className="home__event-month">{month}</span>
-                    </div>
-                    <div className="home__event-body">
-                      <h3 className="home__event-title">{item.title}</h3>
-                      <div className="home__event-meta">
-                        <span className="home__event-meta-item">
-                          <Clock size={17} strokeWidth={1.5} aria-hidden="true" />
-                          {time}
-                        </span>
-                        {item.location && (
-                          <span className="home__event-meta-item">
-                            <MapPin size={17} strokeWidth={1.5} aria-hidden="true" />
-                            {item.location}
-                          </span>
-                        )}
+                  <li key={event.id}>
+                    <Link to={`/veranstaltungen/${event.id}`} className="home__event-card">
+                      <div className="home__event-date">
+                        <span className="home__event-day">{day}</span>
+                        <span className="home__event-month">{month}</span>
                       </div>
-                    </div>
+                      <div className="home__event-body">
+                        <h3 className="home__event-title">{item.title}</h3>
+                        <div className="home__event-meta">
+                          <span className="home__event-meta-item">
+                            <Clock size={17} strokeWidth={1.5} aria-hidden="true" />
+                            {time}
+                          </span>
+                          {item.location && (
+                            <span className="home__event-meta-item">
+                              <MapPin size={17} strokeWidth={1.5} aria-hidden="true" />
+                              {item.location}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    </Link>
                   </li>
                 );
               })}
@@ -125,12 +127,14 @@ export default function Home() {
                 const item = newsItem.attributes || newsItem;
                 const thumbUrl = getMediaUrl(item.mainImage);
                 return (
-                  <li key={newsItem.id} className="home__news-card">
-                    <div
-                      className="home__news-thumb"
-                      style={thumbUrl ? { backgroundImage: `url(${thumbUrl})` } : undefined}
-                    />
-                    <span className="home__news-title">{item.title}</span>
+                  <li key={newsItem.id}>
+                    <Link to={`/aktuelles/${newsItem.id}`} className="home__news-card">
+                      <div
+                        className="home__news-thumb"
+                        style={thumbUrl ? { backgroundImage: `url(${thumbUrl})` } : undefined}
+                      />
+                      <span className="home__news-title">{item.title}</span>
+                    </Link>
                   </li>
                 );
               })}

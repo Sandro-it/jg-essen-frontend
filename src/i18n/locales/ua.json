@@ -337,7 +337,11 @@
       "archiv": "Архів"
     },
     "noEvents": "Наразі заходів не заплановано.",
-    "location": "Місце"
+    "location": "Місце",
+    "detail": {
+      "notFound": "Захід не знайдено.",
+      "backToList": "Назад до заходів"
+    }
   },
   "aktuelles": {
     "title": "Новини",
@@ -348,7 +352,14 @@
       "archiv": "Архів"
     },
     "noNews": "Наразі новин немає.",
-    "publishedOn": "Опубліковано"
+    "publishedOn": "Опубліковано",
+    "detail": {
+      "video": "Відео",
+      "gallery": "Галерея",
+      "notFound": "Новину не знайдено.",
+      "backToList": "Назад до новин",
+      "watchOnYoutube": "Дивитися відео на YouTube"
+    }
   },
   "spenden": {
     "title": "Пожертви",

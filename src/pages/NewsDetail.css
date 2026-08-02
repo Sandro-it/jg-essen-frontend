@@ -1,0 +1,116 @@
+.news-detail__hero {
+  height: var(--hero-height);
+  background-color: var(--color-photo-placeholder);
+  background-size: cover;
+  background-position: center;
+}
+
+.news-detail__content {
+  padding: 32px 24px 60px;
+}
+
+.news-detail__back {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.news-detail h1 {
+  color: var(--color-primary);
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 43px;
+  margin: 0 0 8px;
+}
+
+.news-detail__date {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 20px;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  margin: 0 0 24px;
+}
+
+.news-detail__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.news-detail__meta-item svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.news-detail__text {
+  color: var(--color-primary);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.news-detail__text--plain {
+  white-space: pre-line;
+}
+
+.news-detail__text p {
+  margin: 0 0 16px;
+}
+
+.news-detail__text img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 16px 0;
+}
+
+.news-detail__video,
+.news-detail__gallery {
+  margin-top: 32px;
+  max-width: 800px;
+}
+
+.news-detail__video h2,
+.news-detail__gallery h2 {
+  color: var(--color-primary);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.news-detail__video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.news-detail__video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 6px;
+}
+
+.news-detail__video-link {
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+.news-detail__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.news-detail__gallery-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { fetchEventsArchive, fetchUpcomingEvents } from '../api/strapi';
 import './Veranstaltungen.css';
@@ -48,13 +49,15 @@ export default function Veranstaltungen() {
           {upcoming.map((event) => {
             const item = event.attributes || event;
             return (
-              <li key={event.id} className="veranstaltungen__item">
-                <span className="veranstaltungen__date">{new Date(item.date).toLocaleDateString()}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  {item.location && <p className="veranstaltungen__location">{t('veranstaltungen.location')}: {item.location}</p>}
-                  {item.description && <p>{item.description}</p>}
-                </div>
+              <li key={event.id}>
+                <Link to={`/veranstaltungen/${event.id}`} className="veranstaltungen__item">
+                  <span className="veranstaltungen__date">{new Date(item.date).toLocaleDateString()}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    {item.location && <p className="veranstaltungen__location">{t('veranstaltungen.location')}: {item.location}</p>}
+                    {item.description && <p>{item.description}</p>}
+                  </div>
+                </Link>
               </li>
             );
           })}
@@ -70,11 +73,13 @@ export default function Veranstaltungen() {
           {archive.map((event) => {
             const item = event.attributes || event;
             return (
-              <li key={event.id} className="veranstaltungen__item">
-                <span className="veranstaltungen__date">{new Date(item.date).toLocaleDateString()}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                </div>
+              <li key={event.id}>
+                <Link to={`/veranstaltungen/${event.id}`} className="veranstaltungen__item">
+                  <span className="veranstaltungen__date">{new Date(item.date).toLocaleDateString()}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                  </div>
+                </Link>
               </li>
             );
           })}

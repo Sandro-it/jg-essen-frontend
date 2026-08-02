@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { fetchNewsArchive } from '../api/strapi';
 import './Aktuelles.css';
@@ -51,11 +52,13 @@ export default function Aktuelles() {
         {items.map((newsItem) => {
           const item = newsItem.attributes || newsItem;
           return (
-            <li key={newsItem.id} className="aktuelles__item">
-              <h2>{item.title}</h2>
-              <p className="aktuelles__date">
-                {t('aktuelles.publishedOn')} {new Date(item.date).toLocaleDateString()}
-              </p>
+            <li key={newsItem.id}>
+              <Link to={`/aktuelles/${newsItem.id}`} className="aktuelles__item">
+                <h2>{item.title}</h2>
+                <p className="aktuelles__date">
+                  {t('aktuelles.publishedOn')} {new Date(item.date).toLocaleDateString()}
+                </p>
+              </Link>
             </li>
           );
         })}

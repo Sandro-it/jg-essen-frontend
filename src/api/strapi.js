@@ -57,3 +57,24 @@ export async function fetchEventsArchive({ page = 1, pageSize = 12 } = {}) {
   });
   return data;
 }
+
+// Фільтр по числовому id через колекційний endpoint замість findOne —
+// уникає залежності від Strapi 5 documentId, який list-відповіді не містять.
+export async function fetchNewsById(id) {
+  const { data } = await strapiClient.get('/news-items', {
+    params: {
+      'filters[id][$eq]': id,
+      populate: ['mainImage', 'gallery'],
+    },
+  });
+  return data.data[0] || null;
+}
+
+export async function fetchEventById(id) {
+  const { data } = await strapiClient.get('/events', {
+    params: {
+      'filters[id][$eq]': id,
+    },
+  });
+  return data.data[0] || null;
+}

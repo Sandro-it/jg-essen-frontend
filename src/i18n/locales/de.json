@@ -337,7 +337,11 @@
       "archiv": "Archiv"
     },
     "noEvents": "Aktuell sind keine Veranstaltungen eingetragen.",
-    "location": "Ort"
+    "location": "Ort",
+    "detail": {
+      "notFound": "Veranstaltung nicht gefunden.",
+      "backToList": "Zurück zu Veranstaltungen"
+    }
   },
   "aktuelles": {
     "title": "Aktuelles",
@@ -348,7 +352,14 @@
       "archiv": "Archiv"
     },
     "noNews": "Aktuell sind keine Nachrichten vorhanden.",
-    "publishedOn": "Veröffentlicht am"
+    "publishedOn": "Veröffentlicht am",
+    "detail": {
+      "video": "Video",
+      "gallery": "Galerie",
+      "notFound": "Nachricht nicht gefunden.",
+      "backToList": "Zurück zu Aktuelles",
+      "watchOnYoutube": "Video auf YouTube ansehen"
+    }
   },
   "spenden": {
     "title": "Spenden",
