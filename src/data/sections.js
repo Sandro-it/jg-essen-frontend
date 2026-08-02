@@ -59,13 +59,45 @@ export function getSectionBySlug(slug) {
 }
 
 // Порядок плиток на головній сторінці (2 колонки x 3 ряди), як у макеті "Головна".
+// colors/glyph — палітра та сюжет декоративної іконки-вітража (TileIcon),
+// підібрані під відповідні кола в design-reference/Головна.png.
 export const HOME_TILES = [
-  { slug: 'unsere-gemeinde', navKey: 'unsereGemeinde' },
-  { slug: 'glaube-tradition', navKey: 'glaubeTradition' },
-  { slug: 'gemeindeleben', navKey: 'gemeindeleben' },
-  { slug: 'soziale-hilfe', navKey: 'sozialeHilfe' },
-  { slug: 'veranstaltungen', navKey: 'veranstaltungen' },
-  { slug: 'aktuelles', navKey: 'aktuelles' },
+  {
+    slug: 'unsere-gemeinde',
+    navKey: 'unsereGemeinde',
+    glyph: '✡',
+    colors: ['#2c5f8a', '#e0b73d', '#3f8f5f', '#c9433a', '#6a4c93', '#2c5f8a'],
+  },
+  {
+    slug: 'glaube-tradition',
+    navKey: 'glaubeTradition',
+    glyph: '🕎',
+    colors: ['#7a1f2b', '#a83246', '#7a1f2b', '#c9a86a'],
+  },
+  {
+    slug: 'gemeindeleben',
+    navKey: 'gemeindeleben',
+    glyph: '🧑‍🤝‍🧑',
+    colors: ['#1b3d6d', '#3f7cac', '#7fb2dd', '#1b3d6d'],
+  },
+  {
+    slug: 'soziale-hilfe',
+    navKey: 'sozialeHilfe',
+    glyph: '🤝',
+    colors: ['#1f6f78', '#3fa7ae', '#a8d8dc', '#1f6f78'],
+  },
+  {
+    slug: 'veranstaltungen',
+    navKey: 'veranstaltungen',
+    glyph: '📅',
+    colors: ['#c9433a', '#e0b73d', '#3f8f5f', '#1b3d6d', '#6a4c93'],
+  },
+  {
+    slug: 'aktuelles',
+    navKey: 'aktuelles',
+    glyph: '📰',
+    colors: ['#1b3d6d', '#3f7cac', '#7fb2dd', '#1b3d6d'],
+  },
 ];
 
 // 6 іконок швидкого доступу у футері (спільні для всього сайту).

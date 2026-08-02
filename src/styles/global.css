@@ -13,7 +13,8 @@ body,
 body {
   margin: 0;
   font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background: var(--color-bg);
+  /* Трохи темніший фон під боковими відступами, щоб межа 1440px-макета була видимою */
+  background: var(--color-bg-alt);
   color: var(--color-text);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -32,8 +33,17 @@ img {
   display: block;
 }
 
+/* Реальна ширина фрейму в Figma — обмежує весь сайт, на ширших екранах по
+   боках лишаються порожні відступи замість розтягнутого на всю ширину контенту. */
+.page-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--color-bg);
+  min-height: 100%;
+}
+
 .container {
-  max-width: 1100px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 24px;
 }

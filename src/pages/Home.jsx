@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { HOME_TILES } from '../data/sections';
 import { fetchLatestNews, fetchUpcomingEvents } from '../api/strapi';
+import TileIcon from '../components/TileIcon';
 import './Home.css';
 
 export default function Home() {
@@ -58,7 +59,8 @@ export default function Home() {
       <nav className="home__tiles" aria-label={t('nav.home')}>
         {HOME_TILES.map((tile) => (
           <Link key={tile.slug} to={`/${tile.slug}`} className="home__tile">
-            {t(`nav.${tile.navKey}`)}
+            <span>{t(`nav.${tile.navKey}`)}</span>
+            <TileIcon colors={tile.colors} glyph={tile.glyph} />
           </Link>
         ))}
       </nav>
