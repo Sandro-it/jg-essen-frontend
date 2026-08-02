@@ -1,0 +1,358 @@
+{
+  "common": {
+    "siteName": "Jüdische Gemeinde Essen",
+    "siteClaim": "Gemeinschaft. Tradition. Zukunft.",
+    "readMore": "Mehr erfahren",
+    "showFullArchive": "Gesamtes Archiv anzeigen",
+    "upcomingEvents": "Kommende Veranstaltungen",
+    "latestNews": "Aktuelle Nachrichten",
+    "loading": "Wird geladen…",
+    "loadError": "Inhalte konnten nicht geladen werden.",
+    "noResults": "Keine Einträge gefunden.",
+    "placeholderNotice": "Diese Seite ist ein Platzhalter. Der Inhalt wird ergänzt, sobald das Design vorliegt.",
+    "backToOverview": "Zurück zur Übersicht"
+  },
+  "theme": {
+    "toggleToDark": "Dunkles Design aktivieren",
+    "toggleToLight": "Helles Design aktivieren"
+  },
+  "language": {
+    "switchTo": "Sprache wechseln zu {{lang}}"
+  },
+  "nav": {
+    "home": "Startseite",
+    "unsereGemeinde": "Unsere Gemeinde",
+    "glaubeTradition": "Glaube & Tradition",
+    "gemeindeleben": "Gemeindeleben",
+    "sozialeHilfe": "Soziale Hilfe",
+    "veranstaltungen": "Veranstaltungen",
+    "aktuelles": "Aktuelles",
+    "service": "Service",
+    "kontakt": "Kontakt",
+    "spenden": "Spenden"
+  },
+  "quickAccess": {
+    "gottesdienste": "Gottesdienste",
+    "veranstaltungen": "Veranstaltungen",
+    "mitgliedschaft": "Mitgliedschaft",
+    "sozialeHilfe": "Soziale Hilfe",
+    "dokumente": "Dokumente",
+    "kontakt": "Kontakt"
+  },
+  "footer": {
+    "socialTitle": "Soziale Netzwerke",
+    "partnersTitle": "Partner",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "sitemap": "Sitemap",
+    "rights": "Jüdische Gemeinde Essen. Alle Rechte vorbehalten."
+  },
+  "home": {
+    "heroTitle": "Willkommen auf der Website der Jüdischen Kultusgemeinde Essen!",
+    "heroText": "Hier finden Sie Informationen über die Geschichte der Gemeinde, ihr heutiges Leben, ihre Traditionen und ihre Aktivitäten.",
+    "welcomeTitle": "Willkommen bei der Jüdischen Gemeinde Essen!",
+    "welcomeParagraphs": [
+      "Wir freuen uns, Sie auf unserer Website begrüßen zu dürfen.",
+      "Hier finden Sie Informationen über die Geschichte unserer Gemeinde, ihr heutiges Leben, ihre Traditionen und Aktivitäten. Wir berichten über das religiöse, kulturelle und gesellschaftliche Leben, veröffentlichen Nachrichten, Veranstaltungshinweise und nützliche Informationen für Mitglieder und Gäste.",
+      "Die Jüdische Gemeinde Essen vereint Menschen unterschiedlicher Generationen und Ansichten. Uns verbindet der Respekt vor jüdischen Traditionen, gegenseitige Unterstützung und das Bestreben, jüdisches Leben in unserer Stadt zu bewahren und weiterzuentwickeln.",
+      "Wir hoffen, dass Ihnen diese Website nützlich sein wird und Ihnen hilft, unsere Gemeinde besser kennenzulernen."
+    ]
+  },
+  "sections": {
+    "unsereGemeinde": {
+      "title": "Unsere Gemeinde",
+      "intro": {
+        "menuLabel": "Über uns",
+        "title": "Über uns",
+        "subtitle": "Willkommen bei der Jüdischen Gemeinde Essen",
+        "text": "Die Jüdische Gemeinde Essen vereint Menschen unterschiedlicher Generationen, bewahrt Traditionen, entwickelt kulturelles und geistliches Leben und unterstützt ihre Mitglieder. Heute zählt die Gemeinde rund 930 Mitglieder und gehört dem Landesverband der Jüdischen Gemeinden von Nordrhein zugehörig an. Wir freuen uns über jeden, der Teil des jüdischen Lebens in Essen werden möchte."
+      },
+      "items": {
+        "geschichte": {
+          "menuLabel": "Geschichte",
+          "title": "Geschichte",
+          "subtitle": "Über 700 Jahre jüdische Geschichte",
+          "text": "Die Geschichte der Jüdischen Gemeinde Essen reicht mehr als sieben Jahrhunderte zurück. Nach den tragischen Ereignissen der Shoah wurde die Gemeinde wiederbegründet und erlebte durch die Einwanderung von Juden aus den Staaten der ehemaligen Sowjetunion einen neuen Aufschwung. Heute bewahren wir unser Erbe sorgfältig und entwickeln die Gemeinde für kommende Generationen weiter.",
+          "link": "Mehr über die Geschichte erfahren"
+        },
+        "rabbiner": {
+          "menuLabel": "Rabbiner",
+          "title": "Rabbiner Shmuel Aronov",
+          "subtitle": "Geistlicher Leiter unserer Gemeinde",
+          "text": "Seit 2016 leitet Rabbiner Shmuel Aronov das geistliche Leben der Gemeinde. Er leitet Gottesdienste, begleitet Feiertage und Familienereignisse, lehrt die Tora und hilft den Mitgliedern, die Verbindung zur jüdischen Tradition zu bewahren. Er erhielt seine religiöse Ausbildung in Israel, Frankreich und den USA, wo ihm die Rabbinerwürde (Smicha) verliehen wurde.",
+          "link": "Den Rabbiner kennenlernen"
+        },
+        "vorstand": {
+          "menuLabel": "Vorstand",
+          "title": "Vorstand",
+          "subtitle": "Verantwortungsvolle Leitung",
+          "text": "Vorstand und Gemeinderat bestimmen die wesentlichen Entwicklungsrichtungen der Gemeinde, treffen wichtige Entscheidungen und vertreten ihre Interessen. Das wichtigste Ziel ist eine stabile Entwicklung der Gemeinde und komfortable Bedingungen für ihre Mitglieder.",
+          "link": "Zusammensetzung des Vorstands"
+        },
+        "team": {
+          "menuLabel": "Team",
+          "title": "Team",
+          "subtitle": "Menschen, die für Sie da sind",
+          "text": "Unser Team unterstützt die Mitglieder der Gemeinde im Alltag, organisiert Veranstaltungen und fördert Bildungs-, Kultur- und Sozialprojekte. Wir arbeiten dafür, dass sich jeder als Teil unserer Gemeinschaft fühlt.",
+          "link": "Unser Team"
+        },
+        "mitgliedschaft": {
+          "menuLabel": "Mitgliedschaft",
+          "title": "Mitgliedschaft",
+          "subtitle": "Werden Sie Teil unserer Gemeinde",
+          "text": "Die Mitgliedschaft eröffnet die Möglichkeit, am religiösen, kulturellen und gesellschaftlichen Leben der Gemeinde teilzunehmen, Unterstützung zu erhalten und gemeinsam jüdische Traditionen zu bewahren. Wir freuen uns immer über neue Mitglieder und helfen Ihnen gerne, sich unserer Gemeinde anzuschließen.",
+          "link": "So werden Sie Mitglied"
+        }
+      }
+    },
+    "glaubeTradition": {
+      "title": "Glaube & Tradition",
+      "intro": {
+        "menuLabel": "Judentum",
+        "title": "Judentum",
+        "subtitle": "Uralte Tradition, heute lebendig",
+        "text": "Das Judentum ist eine der ältesten Weltreligionen, gegründet auf dem Glauben an den einen Gott, dem Studium der Tora und der Einhaltung der Gebote. Seit Jahrtausenden vereint es das jüdische Volk und bewahrt seine geistlichen Werte, Traditionen und Lebensweise."
+      },
+      "items": {
+        "synagoge": {
+          "menuLabel": "Synagoge",
+          "title": "Synagoge",
+          "subtitle": "Zentrum des geistlichen und gesellschaftlichen Lebens",
+          "text": "Die Synagoge ist ein Ort des Gebets, des Torastudiums und der Begegnung der Gemeinde. Hier finden Gottesdienste, Unterricht, Feiertagsveranstaltungen und weitere Ereignisse statt, die Menschen unterschiedlicher Generationen verbinden.",
+          "link": "Mehr über die Synagoge"
+        },
+        "schabbat": {
+          "menuLabel": "Schabbat",
+          "title": "Schabbat",
+          "subtitle": "Eine besondere Zeit für Familie und Seele",
+          "text": "Der Schabbat beginnt am Freitagabend und dauert bis zum Samstagabend. Es ist ein Tag der Ruhe, des Gebets, der Familie und der geistlichen Erneuerung, der im Leben jedes jüdischen Hauses einen besonderen Platz einnimmt.",
+          "link": "Mehr über den Schabbat"
+        },
+        "feiertage": {
+          "menuLabel": "Jüdische Feiertage",
+          "title": "Jüdische Feiertage",
+          "subtitle": "Geschichte, Tradition und Freude",
+          "text": "Der jüdische Kalender ist reich an Feiertagen, die an bedeutende Ereignisse der jüdischen Geschichte erinnern. Jeder Feiertag hat seine eigene Bedeutung, Traditionen und Bräuche, die von Generation zu Generation weitergegeben werden.",
+          "link": "Feiertage im Überblick"
+        },
+        "lebenszyklus": {
+          "menuLabel": "Lebenszyklus",
+          "title": "Lebenszyklus",
+          "subtitle": "Von der Geburt bis zur Familiengründung",
+          "text": "Die jüdische Tradition begleitet den Menschen in allen Lebensphasen – von der Geburt und Brit Mila über die Bar- und Bat-Mizwa bis zur Hochzeit und Familiengründung. Jeder Abschnitt wird durch besondere Riten und Bräuche begleitet.",
+          "link": "Mehr zum Lebenszyklus"
+        },
+        "kaschrut": {
+          "menuLabel": "Kaschrut",
+          "title": "Kaschrut",
+          "subtitle": "Traditionen der jüdischen Ernährung",
+          "text": "Kaschrut ist ein Regelwerk, das Auswahl, Zubereitung und Verzehr von Speisen bestimmt. Die Einhaltung der Kaschrut hilft, jahrhundertealte Traditionen zu bewahren, und ist ein wichtiger Teil des jüdischen religiösen Lebens.",
+          "link": "Mehr über Kaschrut"
+        },
+        "friedhof": {
+          "menuLabel": "Beerdigung & Friedhof",
+          "title": "Beerdigung und Friedhof",
+          "subtitle": "Unterstützung in schweren Momenten",
+          "text": "Die Gemeinde hilft bei der Organisation einer Beerdigung gemäß jüdischen Traditionen. Wir stellen die notwendigen Informationen bereit, begleiten die Familien und helfen, organisatorische Fragen in einer schwierigen Zeit zu klären.",
+          "link": "Mehr erfahren"
+        }
+      }
+    },
+    "gemeindeleben": {
+      "title": "Gemeindeleben",
+      "intro": {
+        "menuLabel": "Kultur & Bildung",
+        "title": "Kultur & Bildung",
+        "subtitle": "Führungen, Chor, Orchester, Bibliothek und mehr",
+        "text": "In Vorbereitung: Führungen, Chor, Orchester, Bibliothek, Frauenclub, Deutschkurse, Tanzkurse sowie Literatur & Kunst. Diese Seite wird ergänzt, sobald das endgültige Design vorliegt."
+      },
+      "items": {
+        "kinder-jugend": {
+          "menuLabel": "Kinder & Jugend",
+          "title": "Kinder & Jugend",
+          "subtitle": "Sonntagsschule, Kinderchor und mehr",
+          "text": "In Vorbereitung: Sonntagsschule, Kinderchor, Bar-/Bat-Mizwa-Unterricht, Kreativwerkstatt sowie Veranstaltungen für Kinder.",
+          "link": "Mehr erfahren"
+        },
+        "jez": {
+          "menuLabel": "JEZ – Unser Magazin",
+          "title": "JEZ – Unser Magazin",
+          "subtitle": "Aktuelle Ausgabe, Archiv und mehr",
+          "text": "In Vorbereitung: Aktuelle Ausgabe, Archiv, Über JEZ, Werbung und Kontakt zur Redaktion.",
+          "link": "Zum Magazin"
+        }
+      }
+    },
+    "sozialeHilfe": {
+      "title": "Soziale Hilfe",
+      "intro": {
+        "menuLabel": "Übersicht",
+        "title": "Soziale Hilfe",
+        "subtitle": "Unterstützung für unsere Mitglieder",
+        "text": "In Vorbereitung: Sozialberatung, Hilfe für Senioren, Integration, Hilfe für Neuzuwanderer, Dokumente & Formulare sowie medizinische Begleitung. Diese Seite wird ergänzt, sobald das endgültige Design vorliegt."
+      },
+      "items": {
+        "sozialberatung": {
+          "menuLabel": "Sozialberatung",
+          "title": "Sozialberatung",
+          "subtitle": "Beratung für Mitglieder der Gemeinde",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "senioren": {
+          "menuLabel": "Hilfe für Senioren",
+          "title": "Hilfe für Senioren",
+          "subtitle": "Unterstützung im Alltag",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "integration": {
+          "menuLabel": "Integration",
+          "title": "Integration",
+          "subtitle": "Unterstützung beim Ankommen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "neuzuwanderer": {
+          "menuLabel": "Hilfe für Neuzuwanderer",
+          "title": "Hilfe für Neuzuwanderer",
+          "subtitle": "Erste Schritte in Essen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "dokumente-formulare": {
+          "menuLabel": "Dokumente & Formulare",
+          "title": "Dokumente & Formulare",
+          "subtitle": "Wichtige Unterlagen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "medizinische-begleitung": {
+          "menuLabel": "Medizinische Begleitung",
+          "title": "Medizinische Begleitung",
+          "subtitle": "Unterstützung in medizinischen Fragen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        }
+      }
+    },
+    "service": {
+      "title": "Service",
+      "intro": {
+        "menuLabel": "Übersicht",
+        "title": "Service",
+        "subtitle": "Downloads, Formulare, FAQ und mehr",
+        "text": "In Vorbereitung: Downloads, Formulare, FAQ, Partner & Links sowie nützliche Informationen. Diese Seite wird ergänzt, sobald das endgültige Design vorliegt."
+      },
+      "items": {
+        "downloads": {
+          "menuLabel": "Downloads",
+          "title": "Downloads",
+          "subtitle": "Dokumente zum Herunterladen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "formulare": {
+          "menuLabel": "Formulare",
+          "title": "Formulare",
+          "subtitle": "Formulare der Gemeinde",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "faq": {
+          "menuLabel": "FAQ",
+          "title": "Häufig gestellte Fragen",
+          "subtitle": "Antworten auf häufige Fragen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "partner-links": {
+          "menuLabel": "Partner & Links",
+          "title": "Partner & Links",
+          "subtitle": "Partner und nützliche Links",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "nuetzliche-infos": {
+          "menuLabel": "Nützliche Informationen",
+          "title": "Nützliche Informationen",
+          "subtitle": "Wissenswertes für Mitglieder und Gäste",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        }
+      }
+    },
+    "kontakt": {
+      "title": "Kontakt",
+      "intro": {
+        "menuLabel": "Übersicht",
+        "title": "Kontakt",
+        "subtitle": "Wir sind für Sie da",
+        "text": "In Vorbereitung: Adresse, Öffnungszeiten, Ansprechpartner, Telefon, E-Mail, Kontaktformular sowie Anfahrt. Diese Seite wird ergänzt, sobald das endgültige Design vorliegt."
+      },
+      "items": {
+        "adresse": {
+          "menuLabel": "Adresse",
+          "title": "Adresse",
+          "subtitle": "So finden Sie uns",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "oeffnungszeiten": {
+          "menuLabel": "Öffnungszeiten",
+          "title": "Öffnungszeiten",
+          "subtitle": "Wann wir für Sie da sind",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "ansprechpartner": {
+          "menuLabel": "Ansprechpartner",
+          "title": "Ansprechpartner",
+          "subtitle": "Ihre Kontaktpersonen",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        },
+        "kontaktformular": {
+          "menuLabel": "Kontaktformular",
+          "title": "Kontaktformular",
+          "subtitle": "Schreiben Sie uns",
+          "text": "In Vorbereitung.",
+          "link": "Zum Formular"
+        },
+        "anfahrt": {
+          "menuLabel": "Anfahrt",
+          "title": "Anfahrt",
+          "subtitle": "So erreichen Sie uns",
+          "text": "In Vorbereitung.",
+          "link": "Mehr erfahren"
+        }
+      }
+    }
+  },
+  "veranstaltungen": {
+    "title": "Veranstaltungen",
+    "menu": {
+      "kalender": "Veranstaltungskalender",
+      "kommende": "Kommende Veranstaltungen",
+      "archiv": "Archiv"
+    },
+    "noEvents": "Aktuell sind keine Veranstaltungen eingetragen.",
+    "location": "Ort"
+  },
+  "aktuelles": {
+    "title": "Aktuelles",
+    "menu": {
+      "nachrichten": "Nachrichten",
+      "ankuendigungen": "Ankündigungen",
+      "jez": "JEZ – Unser Magazin",
+      "archiv": "Archiv"
+    },
+    "noNews": "Aktuell sind keine Nachrichten vorhanden.",
+    "publishedOn": "Veröffentlicht am"
+  },
+  "spenden": {
+    "title": "Spenden",
+    "subtitle": "Unterstützen Sie die Jüdische Gemeinde Essen",
+    "text": "Ihre Spende hilft uns, das religiöse, kulturelle und soziale Leben unserer Gemeinde zu erhalten und weiterzuentwickeln. Informationen zu den Spendenmöglichkeiten folgen in Kürze."
+  }
+}
