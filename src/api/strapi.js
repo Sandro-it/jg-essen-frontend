@@ -1,16 +1,16 @@
 import axios from 'axios';
 
-const STRAPI_URL = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:1337';
 
 export const strapiClient = axios.create({
-  baseURL: `${STRAPI_URL}/api`,
+  baseURL: `${API_URL}/api`,
 });
 
 export function getMediaUrl(media) {
   if (!media) return null;
   const url = media.url || media.data?.attributes?.url;
   if (!url) return null;
-  return url.startsWith('http') ? url : `${STRAPI_URL}${url}`;
+  return url.startsWith('http') ? url : `${API_URL}${url}`;
 }
 
 export async function fetchLatestNews(limit = 3) {

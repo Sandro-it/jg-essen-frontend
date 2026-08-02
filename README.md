@@ -13,7 +13,7 @@ React + Vite фронтенд нового сайту Єврейської гр�
 
 ```bash
 npm install
-cp .env.example .env   # вкажіть VITE_STRAPI_URL, якщо бекенд не на localhost:1337
+cp .env.example .env   # вкажіть VITE_API_URL, якщо бекенд не на localhost:1337
 npm run dev
 ```
 
