@@ -17,30 +17,32 @@
   mix-blend-mode: multiply;
 }
 
-/* Горизонталь — точно за Figma (left:63px, ширина 387.33px). По вертикалі —
-   по центру hero-банера (а не фіксований top:323px з Figma-кадру). */
+/* Горизонталь — за Figma (left:63px, ширина 387.33px при дизайн-ширині
+   1440px), помножено на --container-scale, щоб текстбокс стискався разом
+   з банером, а не хардкодився в px. По вертикалі — по центру hero-банера. */
 .home__hero-textbox {
   position: absolute;
-  left: 63px;
+  left: calc(63px * var(--container-scale));
   top: 50%;
   transform: translateY(-50%);
-  width: 387.33px;
-  min-height: 166px;
+  width: calc(387.33px * var(--container-scale));
+  min-height: calc(166px * var(--container-scale));
   /* Непрозора підкладка — фото під нею містить залишок тексту з вихідного
      скріншота-макету, самого лише градієнта-скріму недостатньо, щоб
      його приховати. */
   background: rgba(4, 10, 22, 0.78);
-  padding: 12px 16px;
+  padding: calc(12px * var(--container-scale)) calc(16px * var(--container-scale));
   border-radius: 4px;
 }
 
 /* Один текстовий шар у Figma з двома розмірами всередині (звірено з
-   панеллю Typography): заголовок Semi Bold 26.06px, опис Regular 13.55px. */
+   панеллю Typography): заголовок Semi Bold 26.06px, опис Regular 13.55px
+   при дизайн-ширині 1440px — масштабується разом з банером. */
 .home__hero-textbox h1 {
   margin: 0 0 6px;
   font-weight: 600;
-  font-size: 26.06px;
-  line-height: 32px;
+  font-size: calc(26.06px * var(--container-scale));
+  line-height: calc(32px * var(--container-scale));
   color: #ffffff;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
@@ -48,8 +50,8 @@
 .home__hero-textbox p {
   margin: 0;
   font-weight: 400;
-  font-size: 13.55px;
-  line-height: 18px;
+  font-size: calc(13.55px * var(--container-scale));
+  line-height: calc(18px * var(--container-scale));
   color: #ffffff;
   opacity: 0.92;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
@@ -81,10 +83,12 @@
   text-decoration: none;
 }
 
+/* 131px — розмір за Figma при дизайн-ширині 1440px; масштабується разом
+   з контейнером через --container-scale замість хардкодженого px. */
 .tile-icon {
   flex-shrink: 0;
-  width: 131px;
-  height: 131px;
+  width: calc(131px * var(--container-scale));
+  height: calc(131px * var(--container-scale));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -93,8 +97,8 @@
 }
 
 .tile-icon__photo {
-  width: 123px;
-  height: 123px;
+  width: calc(123px * var(--container-scale));
+  height: calc(123px * var(--container-scale));
   border-radius: 50%;
   object-fit: cover;
 }

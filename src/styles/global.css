@@ -5,8 +5,18 @@
 }
 
 :root {
-  /* Однакова висота hero-банера на Головній і на підсторінках (Group 14 з Figma: 416px). */
-  --hero-height: 416px;
+  /* Оригінальна ширина фрейму Figma — 1440px. --container-scale — це
+     --container-max-width / 1440, вручну виражене unitless-числом (ділення
+     px на px у calc() ненадійне між браузерами). Якщо міняєш
+     --container-max-width — онови --container-scale тим самим коефіцієнтом:
+     розміри банера й іконок-плиток порахуються від нього автоматично
+     замість хардкоджених пікселів. */
+  --container-max-width: 1200px;
+  --container-scale: 0.8333333;
+
+  /* Однакова висота hero-банера на Головній і на підсторінках
+     (Group 14 з Figma: 416px при ширині фрейму 1440px). */
+  --hero-height: calc(416px * var(--container-scale));
 }
 
 html,
@@ -38,17 +48,17 @@ img {
   display: block;
 }
 
-/* Реальна ширина фрейму в Figma — обмежує весь сайт, на ширших екранах по
-   боках лишаються порожні відступи замість розтягнутого на всю ширину контенту. */
+/* Ширина сайту — обмежує весь сайт, на ширших екранах по боках лишаються
+   порожні відступи замість розтягнутого на всю ширину контенту. */
 .page-shell {
-  max-width: 1440px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   background: var(--color-bg);
   min-height: 100%;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 24px;
 }
