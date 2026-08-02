@@ -16,12 +16,6 @@ export const LANGUAGE_LABELS = {
   ru: 'RU',
 };
 
-export const LANGUAGE_FLAGS = {
-  de: '🇩🇪',
-  ua: '🇺🇦',
-  ru: '🇷🇺',
-};
-
 export function getNextLanguage(current) {
   const index = LANGUAGES.indexOf(current);
   return LANGUAGES[(index + 1) % LANGUAGES.length];

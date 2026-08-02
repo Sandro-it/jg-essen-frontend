@@ -1,18 +1,58 @@
 .home__hero {
-  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  position: relative;
+  height: var(--hero-height);
+  background-color: var(--color-photo-placeholder);
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
-  padding: 60px 0;
 }
 
-.home__hero h1 {
-  max-width: 640px;
-  font-size: 30px;
-  margin-bottom: 12px;
+/* Rectangle 31/32 з Figma: лінійний градієнт сірий -> прозорий,
+   mix-blend-mode: multiply (не суцільна темна підкладка, а мультиплікативне
+   затемнення самого фото зліва направо). */
+.home__hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #737373 0%, rgba(217, 217, 217, 0) 100%);
+  mix-blend-mode: multiply;
 }
 
-.home__hero p {
-  max-width: 560px;
-  opacity: 0.9;
+/* Горизонталь — точно за Figma (left:63px, ширина 387.33px). По вертикалі —
+   по центру hero-банера (а не фіксований top:323px з Figma-кадру). */
+.home__hero-textbox {
+  position: absolute;
+  left: 63px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 387.33px;
+  min-height: 166px;
+  /* Непрозора підкладка — фото під нею містить залишок тексту з вихідного
+     скріншота-макету, самого лише градієнта-скріму недостатньо, щоб
+     його приховати. */
+  background: rgba(4, 10, 22, 0.78);
+  padding: 12px 16px;
+  border-radius: 4px;
+}
+
+/* Один текстовий шар у Figma з двома розмірами всередині (звірено з
+   панеллю Typography): заголовок Semi Bold 26.06px, опис Regular 13.55px. */
+.home__hero-textbox h1 {
+  margin: 0 0 6px;
+  font-weight: 600;
+  font-size: 26.06px;
+  line-height: 32px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.home__hero-textbox p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13.55px;
+  line-height: 18px;
+  color: #ffffff;
+  opacity: 0.92;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .home__tiles {
@@ -42,40 +82,26 @@
 }
 
 .tile-icon {
-  position: relative;
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
+  width: 131px;
+  height: 131px;
   border-radius: 50%;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.tile-icon__leading {
-  position: absolute;
-  inset: 0;
+.tile-icon__photo {
+  width: 123px;
+  height: 123px;
   border-radius: 50%;
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(0, 0, 0, 0.35) 0deg 1.5deg,
-    transparent 1.5deg 30deg
-  );
-  pointer-events: none;
-}
-
-.tile-icon__glyph {
-  position: relative;
-  font-size: 26px;
-  line-height: 1;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+  object-fit: cover;
 }
 
 .home__lists {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
   padding: 40px 24px;
 }
@@ -85,32 +111,104 @@
   font-size: 18px;
 }
 
-.home__list ul {
+/* Картки подій — блок дати (день/місяць) + назва + час/місце з іконками */
+.home__event-list,
+.home__news-list {
   list-style: none;
   margin: 0 0 12px;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
-.home__list li {
+.home__event-card {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 16px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  padding: 10px 12px;
+  padding: 14px;
 }
 
-.home__list-date {
-  font-weight: 700;
+.home__event-date {
+  flex-shrink: 0;
+  width: 65px;
+  min-height: 101px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: var(--color-primary);
-  white-space: nowrap;
+}
+
+.home__event-day {
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.home__event-month {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.home__event-title {
+  margin: 0 0 6px;
+  font-size: 27.78px;
+  font-weight: 600;
+  line-height: 37px;
+  color: var(--color-primary);
+}
+
+.home__event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+}
+
+.home__event-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18.83px;
+  line-height: 32px;
+  color: var(--color-primary);
+}
+
+.home__event-meta-item svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Картки новин — мініатюра + заголовок */
+.home__news-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home__news-thumb {
+  flex-shrink: 0;
+  width: 182px;
+  height: 106px;
+  border-radius: 4px;
+  background-color: var(--color-photo-placeholder);
+  background-size: cover;
+  background-position: center;
+}
+
+.home__news-title {
+  max-width: 318px;
+  font-size: 27.78px;
+  font-weight: 400;
+  line-height: 37px;
+  color: var(--color-primary);
 }
 
 .home__welcome {
-  padding: 0 24px 60px;
-  max-width: 780px;
+  padding-bottom: 60px;
 }
 
 .home__welcome h2 {

@@ -1,3 +1,10 @@
+import iconUnsereGemeinde from '../assets/tile-icons/unsere-gemeinde.png';
+import iconGlaubeTradition from '../assets/tile-icons/glaube-tradition.png';
+import iconGemeindeleben from '../assets/tile-icons/gemeindeleben.png';
+import iconSozialeHilfe from '../assets/tile-icons/soziale-hilfe.png';
+import iconVeranstaltungen from '../assets/tile-icons/veranstaltungen.png';
+import iconAktuelles from '../assets/tile-icons/aktuelles.png';
+
 // Конфігурація розділів типу SectionHub.
 // Кожен розділ рендериться компонентами SectionHub (/{slug}) та
 // SectionSubpage (/{slug}/{itemSlug}) на основі одних і тих самих даних,
@@ -59,55 +66,26 @@ export function getSectionBySlug(slug) {
 }
 
 // Порядок плиток на головній сторінці (2 колонки x 3 ряди), як у макеті "Головна".
-// colors/glyph — палітра та сюжет декоративної іконки-вітража (TileIcon),
-// підібрані під відповідні кола в design-reference/Головна.png.
+// image — фото-кроп з design-reference/Головна.png у круглій масці (131×131px),
+// color — власна кольорова підложка кожної плитки (Точна специфікація дизайну).
 export const HOME_TILES = [
-  {
-    slug: 'unsere-gemeinde',
-    navKey: 'unsereGemeinde',
-    glyph: '✡',
-    colors: ['#2c5f8a', '#e0b73d', '#3f8f5f', '#c9433a', '#6a4c93', '#2c5f8a'],
-  },
-  {
-    slug: 'glaube-tradition',
-    navKey: 'glaubeTradition',
-    glyph: '🕎',
-    colors: ['#7a1f2b', '#a83246', '#7a1f2b', '#c9a86a'],
-  },
-  {
-    slug: 'gemeindeleben',
-    navKey: 'gemeindeleben',
-    glyph: '🧑‍🤝‍🧑',
-    colors: ['#1b3d6d', '#3f7cac', '#7fb2dd', '#1b3d6d'],
-  },
-  {
-    slug: 'soziale-hilfe',
-    navKey: 'sozialeHilfe',
-    glyph: '🤝',
-    colors: ['#1f6f78', '#3fa7ae', '#a8d8dc', '#1f6f78'],
-  },
-  {
-    slug: 'veranstaltungen',
-    navKey: 'veranstaltungen',
-    glyph: '📅',
-    colors: ['#c9433a', '#e0b73d', '#3f8f5f', '#1b3d6d', '#6a4c93'],
-  },
-  {
-    slug: 'aktuelles',
-    navKey: 'aktuelles',
-    glyph: '📰',
-    colors: ['#1b3d6d', '#3f7cac', '#7fb2dd', '#1b3d6d'],
-  },
+  { slug: 'unsere-gemeinde', navKey: 'unsereGemeinde', image: iconUnsereGemeinde, color: '#2c5f8a' },
+  { slug: 'glaube-tradition', navKey: 'glaubeTradition', image: iconGlaubeTradition, color: '#CE4D4D' },
+  { slug: 'gemeindeleben', navKey: 'gemeindeleben', image: iconGemeindeleben, color: '#1F3A79' },
+  { slug: 'soziale-hilfe', navKey: 'sozialeHilfe', image: iconSozialeHilfe, color: '#1f6f78' },
+  { slug: 'veranstaltungen', navKey: 'veranstaltungen', image: iconVeranstaltungen, color: '#c9433a' },
+  { slug: 'aktuelles', navKey: 'aktuelles', image: iconAktuelles, color: '#1b3d6d' },
 ];
 
 // 6 іконок швидкого доступу у футері (спільні для всього сайту).
+// icon — назва компонента lucide-react (мапиться в Footer.jsx).
 export const QUICK_ACCESS_ITEMS = [
-  { key: 'gottesdienste', to: '/glaube-tradition' },
-  { key: 'veranstaltungen', to: '/veranstaltungen' },
-  { key: 'mitgliedschaft', to: '/unsere-gemeinde/mitgliedschaft' },
-  { key: 'sozialeHilfe', to: '/soziale-hilfe' },
-  { key: 'dokumente', to: '/service/downloads' },
-  { key: 'kontakt', to: '/kontakt' },
+  { key: 'gottesdienste', to: '/glaube-tradition', icon: 'Church' },
+  { key: 'veranstaltungen', to: '/veranstaltungen', icon: 'CalendarCheck' },
+  { key: 'mitgliedschaft', to: '/unsere-gemeinde/mitgliedschaft', icon: 'Users' },
+  { key: 'sozialeHilfe', to: '/soziale-hilfe', icon: 'HeartHandshake' },
+  { key: 'dokumente', to: '/service/downloads', icon: 'FileDown' },
+  { key: 'kontakt', to: '/kontakt', icon: 'Phone' },
 ];
 
 export const SOCIAL_LINKS = [

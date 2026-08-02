@@ -1,23 +1,10 @@
-// Кругла декоративна іконка у стилі вітража для плиток на Головній —
-// сегменти кольорового скла (conic-gradient) зі "свинцевими" перегородками
-// та простим сюжетним гліфом по центру, стилізовано під design-reference/Головна.png.
-export default function TileIcon({ colors, glyph }) {
-  const segments = colors
-    .map((color, index) => {
-      const start = (360 / colors.length) * index;
-      const end = (360 / colors.length) * (index + 1);
-      return `${color} ${start}deg ${end}deg`;
-    })
-    .join(', ');
-
+// Кругла декоративна іконка біля плитки на Головній: фото (кроп з
+// design-reference/Головна.png) у круглій масці поверх кольорової
+// підложки — 131×131px за специфікацією дизайну.
+export default function TileIcon({ image, color, alt }) {
   return (
-    <span
-      className="tile-icon"
-      aria-hidden="true"
-      style={{ background: `conic-gradient(from 0deg, ${segments})` }}
-    >
-      <span className="tile-icon__leading" />
-      <span className="tile-icon__glyph">{glyph}</span>
+    <span className="tile-icon" style={{ backgroundColor: color }} aria-hidden="true">
+      <img src={image} alt={alt || ''} className="tile-icon__photo" />
     </span>
   );
 }

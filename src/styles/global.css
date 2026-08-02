@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* Однакова висота hero-банера на Головній і на підсторінках (Group 14 з Figma: 416px). */
+  --hero-height: 416px;
+}
+
 html,
 body,
 #root {
@@ -12,7 +17,7 @@ body,
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   /* Трохи темніший фон під боковими відступами, щоб межа 1440px-макета була видимою */
   background: var(--color-bg-alt);
   color: var(--color-text);

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { getNextLanguage, LANGUAGE_FLAGS, LANGUAGE_LABELS } from '../i18n';
+import { getNextLanguage, LANGUAGE_LABELS } from '../i18n';
+import FlagIcon from './FlagIcon';
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -14,7 +15,7 @@ export default function LanguageSwitcher() {
       aria-label={`${LANGUAGE_LABELS[current] || current.toUpperCase()} — switch language to ${LANGUAGE_LABELS[next]}`}
       title={LANGUAGE_LABELS[current] || current.toUpperCase()}
     >
-      <span aria-hidden="true">{LANGUAGE_FLAGS[current] || '🌐'}</span>
+      <FlagIcon lang={current} />
     </button>
   );
 }

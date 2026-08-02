@@ -1,16 +1,22 @@
 .section-hub__hero {
-  height: 260px;
-  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  height: var(--hero-height);
+  background: var(--color-photo-placeholder);
 }
 
-.section-hub h1 {
+.section-hub h1,
+.section-subpage__intro h1 {
   margin-top: 28px;
+  margin-bottom: 0;
   color: var(--color-primary);
-  font-size: 30px;
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 67px;
+  text-transform: uppercase;
 }
 
 .section-menu {
   border-bottom: 1px solid var(--color-border);
+  margin-top: 24px;
   margin-bottom: 24px;
 }
 
@@ -18,7 +24,8 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 4px;
+  align-items: baseline;
+  gap: 4px 12px;
   margin: 0;
   padding: 0 0 12px;
 }
@@ -35,21 +42,22 @@
 }
 
 .section-menu a {
-  color: var(--color-text-muted);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.02em;
+  color: var(--color-primary);
+  font-weight: 400;
+  font-size: 35.3px;
+  line-height: 43px;
   text-transform: uppercase;
   padding: 4px 2px;
+  opacity: 0.6;
 }
 
 .section-menu a:hover {
   text-decoration: none;
-  color: var(--color-primary);
+  opacity: 0.85;
 }
 
 .section-menu a.is-active {
-  color: var(--color-primary);
+  opacity: 1;
   border-bottom: 2px solid var(--color-primary);
 }
 
@@ -68,14 +76,41 @@
   margin-bottom: 20px;
 }
 
-.section-hub__intro h2 {
+.section-hub__intro h2,
+.section-hub__teaser h2 {
   color: var(--color-primary);
   margin-bottom: 4px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  text-transform: uppercase;
 }
 
 .section-hub__subtitle {
-  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
   margin: 0 0 8px;
+}
+
+.section-hub__text {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.section-subpage__intro {
+  padding-bottom: 20px;
+}
+
+.section-subpage__text {
+  color: var(--color-primary);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 45px;
+  max-width: 900px;
 }
 
 .section-hub__teasers {
@@ -87,20 +122,18 @@
   gap: 24px;
 }
 
-.section-hub__teaser h2 {
+.section-hub__teaser-link,
+.section-hub__back {
+  display: inline-block;
   color: var(--color-primary);
-  margin-bottom: 4px;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .section-hub__teaser-link {
-  display: inline-block;
   margin-top: 6px;
-  font-weight: 600;
 }
 
 .section-hub__back {
-  display: inline-block;
   margin: 24px 0 40px;
-  font-weight: 600;
 }

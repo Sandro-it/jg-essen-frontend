@@ -26,7 +26,7 @@ export default function SectionHub({ slug }) {
         <section className="section-hub__intro">
           <h2>{t(`${section.i18nKey}.intro.title`)}</h2>
           <p className="section-hub__subtitle">{t(`${section.i18nKey}.intro.subtitle`)}</p>
-          <p>{t(`${section.i18nKey}.intro.text`)}</p>
+          <p className="section-hub__text">{t(`${section.i18nKey}.intro.text`)}</p>
         </section>
 
         <ul className="section-hub__teasers">
@@ -34,7 +34,7 @@ export default function SectionHub({ slug }) {
             <li key={itemSlug} className="section-hub__teaser">
               <h2>{t(`${section.i18nKey}.items.${itemSlug}.title`)}</h2>
               <p className="section-hub__subtitle">{t(`${section.i18nKey}.items.${itemSlug}.subtitle`)}</p>
-              <p>{t(`${section.i18nKey}.items.${itemSlug}.text`)}</p>
+              <p className="section-hub__text">{t(`${section.i18nKey}.items.${itemSlug}.text`)}</p>
               <Link to={`/${section.slug}/${itemSlug}`} className="section-hub__teaser-link">
                 {t(`${section.i18nKey}.items.${itemSlug}.link`)} →
               </Link>

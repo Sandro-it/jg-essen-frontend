@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Church, CalendarCheck, Users, HeartHandshake, FileDown, Phone, Gift } from 'lucide-react';
 import { QUICK_ACCESS_ITEMS, SOCIAL_LINKS, PARTNER_LINKS } from '../data/sections';
+import SocialIcon from './SocialIcon';
 import './Footer.css';
+
+const QUICK_ACCESS_ICONS = { Church, CalendarCheck, Users, HeartHandshake, FileDown, Phone };
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -9,50 +13,67 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="quick-access container">
-        {QUICK_ACCESS_ITEMS.map((item) => (
-          <Link key={item.key} to={item.to} className="quick-access__item">
-            <span className="quick-access__label">{t(`quickAccess.${item.key}`)}</span>
-          </Link>
-        ))}
+        {QUICK_ACCESS_ITEMS.map((item) => {
+          const Icon = QUICK_ACCESS_ICONS[item.icon];
+          return (
+            <Link key={item.key} to={item.to} className="quick-access__item">
+              <Icon size={28} strokeWidth={1.75} aria-hidden="true" />
+              <span className="quick-access__label">{t(`quickAccess.${item.key}`)}</span>
+            </Link>
+          );
+        })}
         <Link to="/spenden" className="quick-access__item quick-access__item--donate">
+          <Gift size={28} strokeWidth={1.75} aria-hidden="true" />
           <span className="quick-access__label">{t('nav.spenden')}</span>
         </Link>
       </div>
 
       <div className="site-footer__bottom container">
-        <div className="site-footer__col">
-          <h3>{t('footer.socialTitle')}</h3>
-          <ul className="site-footer__social">
-            {SOCIAL_LINKS.map((social) => (
-              <li key={social.key}>
-                <a href={social.href} target="_blank" rel="noreferrer">
-                  {social.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* Соцмережі + логотипи партнерів — один спільний блок-контейнер
+            (у Figma це один фрейм, не розкидані по футеру елементи) */}
+        <div className="site-footer__brand-block">
+          <div className="site-footer__brand-group">
+            <h3>{t('footer.socialTitle')}</h3>
+            <ul className="site-footer__social">
+              {SOCIAL_LINKS.map((social) => (
+                <li key={social.key}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    title={social.label}
+                  >
+                    <SocialIcon name={social.key} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="site-footer__brand-divider" aria-hidden="true" />
+
+          <div className="site-footer__brand-group">
+            <h3>{t('footer.partnersTitle')}</h3>
+            <ul className="site-footer__partners">
+              {PARTNER_LINKS.map((partner) => (
+                <li key={partner.key}>{partner.label}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="site-footer__col">
-          <h3>{t('footer.partnersTitle')}</h3>
-          <ul className="site-footer__partners">
-            {PARTNER_LINKS.map((partner) => (
-              <li key={partner.key}>{partner.label}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="site-footer__col">
-          <ul className="site-footer__legal">
-            <li>
-              <Link to="/impressum">{t('footer.impressum')}</Link>
-            </li>
-            <li>
-              <Link to="/datenschutz">{t('footer.datenschutz')}</Link>
-            </li>
-            <li>
-              <Link to="/sitemap">{t('footer.sitemap')}</Link>
-            </li>
-          </ul>
-        </div>
+
+        <ul className="site-footer__legal">
+          <li>
+            <Link to="/impressum">{t('footer.impressum')}</Link>
+          </li>
+          <li>
+            <Link to="/datenschutz">{t('footer.datenschutz')}</Link>
+          </li>
+          <li>
+            <Link to="/sitemap">{t('footer.sitemap')}</Link>
+          </li>
+        </ul>
       </div>
       <div className="site-footer__rights container">
         <p>
