@@ -39,15 +39,18 @@
   flex-direction: column;
 }
 
+/* Назва сайту — найбільший текстовий елемент на сайті (вершина ієрархії:
+   шапка > H1 > заголовки секцій > підменю). */
 .site-header__title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 30px;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .site-header__claim {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--color-text-muted);
 }
 

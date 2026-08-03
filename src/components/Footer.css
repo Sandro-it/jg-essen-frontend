@@ -11,9 +11,9 @@
 .quick-access {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 28px;
+  gap: calc(20px * var(--container-scale)) calc(28px * var(--container-scale));
   padding: 32px 24px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .quick-access__item {
@@ -26,24 +26,28 @@
   color: var(--color-footer-icon);
 }
 
+/* 111px — розмір за Figma при дизайн-ширині 1440px; масштабується разом
+   з контейнером через --container-scale, як іконка-плитка на Головній. */
 .quick-access__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 111px;
-  height: 111px;
+  width: calc(111px * var(--container-scale));
+  height: calc(111px * var(--container-scale));
   flex-shrink: 0;
 }
 
 .quick-access__icon svg {
+  width: calc(56px * var(--container-scale));
+  height: calc(56px * var(--container-scale));
   color: var(--color-footer-icon);
 }
 
 .quick-access__label {
   white-space: nowrap;
-  font-size: 20px;
+  font-size: calc(20px * var(--container-scale));
   font-weight: 600;
-  line-height: 24px;
+  line-height: calc(24px * var(--container-scale));
   color: var(--color-footer-icon);
 }
 

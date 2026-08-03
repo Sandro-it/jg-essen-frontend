@@ -11,8 +11,8 @@
      --container-max-width — онови --container-scale тим самим коефіцієнтом:
      розміри банера й іконок-плиток порахуються від нього автоматично
      замість хардкоджених пікселів. */
-  --container-max-width: 1200px;
-  --container-scale: 0.8333333;
+  --container-max-width: 1000px;
+  --container-scale: 0.6944444;
 
   /* Однакова висота hero-банера на Головній і на підсторінках
      (Group 14 з Figma: 416px при ширині фрейму 1440px). */

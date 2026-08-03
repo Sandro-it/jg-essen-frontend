@@ -64,12 +64,14 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+/* Відступи плитки масштабуються через --container-scale разом з іконкою,
+   щоб увесь блок 6 плиток був компактнішим по висоті на вужчому контейнері. */
 .home__tile {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 20px 28px;
+  gap: calc(16px * var(--container-scale));
+  padding: calc(20px * var(--container-scale)) calc(28px * var(--container-scale));
   font-size: 20px;
   font-weight: 700;
   color: var(--color-primary);
