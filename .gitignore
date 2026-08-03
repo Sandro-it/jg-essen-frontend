@@ -26,3 +26,6 @@ design-reference/
 *.njsproj
 *.sln
 *.sw?
+
+.vercel
+.env*
