@@ -143,10 +143,12 @@
   text-decoration: none;
 }
 
+/* Розміри картки події масштабуються через --container-scale, як і решта
+   "великих" блоків (банер, іконки-плитки) на цій гілці. */
 .home__event-date {
   flex-shrink: 0;
-  width: 65px;
-  min-height: 101px;
+  width: calc(65px * var(--container-scale));
+  min-height: calc(101px * var(--container-scale));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,22 +157,22 @@
 }
 
 .home__event-day {
-  font-size: 46px;
+  font-size: calc(46px * var(--container-scale));
   font-weight: 600;
   line-height: 1;
 }
 
 .home__event-month {
-  font-size: 15px;
+  font-size: calc(15px * var(--container-scale));
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .home__event-title {
   margin: 0 0 6px;
-  font-size: 27.78px;
+  font-size: calc(27.78px * var(--container-scale));
   font-weight: 600;
-  line-height: 37px;
+  line-height: calc(37px * var(--container-scale));
   color: var(--color-primary);
 }
 
@@ -184,12 +186,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 18.83px;
-  line-height: 32px;
+  font-size: calc(18.83px * var(--container-scale));
+  line-height: calc(32px * var(--container-scale));
   color: var(--color-primary);
 }
 
 .home__event-meta-item svg {
+  width: calc(17px * var(--container-scale));
+  height: calc(17px * var(--container-scale));
   color: var(--color-primary);
   flex-shrink: 0;
 }
@@ -208,8 +212,8 @@
 
 .home__news-thumb {
   flex-shrink: 0;
-  width: 182px;
-  height: 106px;
+  width: calc(182px * var(--container-scale));
+  height: calc(106px * var(--container-scale));
   border-radius: 4px;
   background-color: var(--color-photo-placeholder);
   background-size: cover;
@@ -217,10 +221,10 @@
 }
 
 .home__news-title {
-  max-width: 318px;
-  font-size: 27.78px;
+  max-width: calc(318px * var(--container-scale));
+  font-size: calc(27.78px * var(--container-scale));
   font-weight: 400;
-  line-height: 37px;
+  line-height: calc(37px * var(--container-scale));
   color: var(--color-primary);
 }
 
