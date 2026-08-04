@@ -84,23 +84,14 @@
 }
 
 /* 131px — розмір за Figma при дизайн-ширині 1440px; масштабується разом
-   з контейнером через --container-scale замість хардкодженого px. */
+   з контейнером через --container-scale замість хардкодженого px. Саме
+   зображення з макета вже кругле — жодного додаткового оформлення
+   (фону, рамки, box-shadow) навколо нього не додаємо. */
 .tile-icon {
   flex-shrink: 0;
   width: calc(131px * var(--container-scale));
   height: calc(131px * var(--container-scale));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-}
-
-.tile-icon__photo {
-  width: calc(123px * var(--container-scale));
-  height: calc(123px * var(--container-scale));
-  border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .home__lists {
