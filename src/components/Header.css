@@ -8,19 +8,20 @@
   background: #091c3f;
 }
 
+/* Другий раунд компактизації, п.4: padding шапки зменшено з 14px до 8px. */
 .site-header__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 14px;
-  padding-bottom: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   gap: 16px;
 }
 
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   color: var(--color-primary);
 }
 
@@ -29,7 +30,7 @@
 }
 
 .site-header__logo {
-  font-size: 34px;
+  font-size: 22px;
   line-height: 1;
   color: var(--color-primary);
 }
@@ -39,18 +40,18 @@
   flex-direction: column;
 }
 
-/* Назва сайту — найбільший текстовий елемент на сайті (вершина ієрархії:
-   шапка > H1 > заголовки секцій > підменю). */
+/* Другий раунд компактизації, п.1: назва сайту зменшена з 30px до 20px —
+   близько до розміру тексту навігаційних плиток (.home__tile). */
 .site-header__title {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 1.1;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .site-header__claim {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--color-text-muted);
 }
 

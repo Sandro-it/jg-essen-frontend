@@ -64,15 +64,16 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Відступи плитки масштабуються через --container-scale разом з іконкою,
-   щоб увесь блок 6 плиток був компактнішим по висоті на вужчому контейнері. */
+/* Другий раунд компактизації, п.2: додатковий --tile-scale (0.5) поверх
+   --container-scale — плитки й іконки вдвічі менші, ніж у першому раунді. */
 .home__tile {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: calc(16px * var(--container-scale));
-  padding: calc(20px * var(--container-scale)) calc(28px * var(--container-scale));
-  font-size: 20px;
+  gap: calc(16px * var(--container-scale) * var(--tile-scale));
+  padding: calc(20px * var(--container-scale) * var(--tile-scale))
+    calc(28px * var(--container-scale) * var(--tile-scale));
+  font-size: 17px;
   font-weight: 700;
   color: var(--color-primary);
   border: 1px solid var(--color-border);
@@ -85,12 +86,12 @@
   text-decoration: none;
 }
 
-/* 131px — розмір за Figma при дизайн-ширині 1440px; масштабується разом
-   з контейнером через --container-scale замість хардкодженого px. */
+/* 131px — розмір за Figma при дизайн-ширині 1440px; масштабується через
+   --container-scale і додатково --tile-scale (п.2 другого раунду). */
 .tile-icon {
   flex-shrink: 0;
-  width: calc(131px * var(--container-scale));
-  height: calc(131px * var(--container-scale));
+  width: calc(131px * var(--container-scale) * var(--tile-scale));
+  height: calc(131px * var(--container-scale) * var(--tile-scale));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -99,17 +100,19 @@
 }
 
 .tile-icon__photo {
-  width: calc(123px * var(--container-scale));
-  height: calc(123px * var(--container-scale));
+  width: calc(123px * var(--container-scale) * var(--tile-scale));
+  height: calc(123px * var(--container-scale) * var(--tile-scale));
   border-radius: 50%;
   object-fit: cover;
 }
 
+/* Другий раунд компактизації, п.5: нижній padding зменшено (40px -> 16px),
+   щоб скоротити відступ до welcome-тексту одразу під цим блоком. */
 .home__lists {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
-  padding: 40px 24px;
+  padding: 32px 24px 16px;
 }
 
 .home__list h2 {
@@ -143,12 +146,12 @@
   text-decoration: none;
 }
 
-/* Розміри картки події масштабуються через --container-scale, як і решта
-   "великих" блоків (банер, іконки-плитки) на цій гілці. */
+/* Другий раунд компактизації, п.3: додатковий --card-scale (0.75) поверх
+   --container-scale — компактніші картки подій/новин, менший шрифт. */
 .home__event-date {
   flex-shrink: 0;
-  width: calc(65px * var(--container-scale));
-  min-height: calc(101px * var(--container-scale));
+  width: calc(65px * var(--container-scale) * var(--card-scale));
+  min-height: calc(101px * var(--container-scale) * var(--card-scale));
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,22 +160,22 @@
 }
 
 .home__event-day {
-  font-size: calc(46px * var(--container-scale));
+  font-size: calc(46px * var(--container-scale) * var(--card-scale));
   font-weight: 600;
   line-height: 1;
 }
 
 .home__event-month {
-  font-size: calc(15px * var(--container-scale));
+  font-size: calc(15px * var(--container-scale) * var(--card-scale));
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .home__event-title {
   margin: 0 0 6px;
-  font-size: calc(27.78px * var(--container-scale));
+  font-size: calc(27.78px * var(--container-scale) * var(--card-scale));
   font-weight: 600;
-  line-height: calc(37px * var(--container-scale));
+  line-height: calc(37px * var(--container-scale) * var(--card-scale));
   color: var(--color-primary);
 }
 
@@ -186,14 +189,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: calc(18.83px * var(--container-scale));
-  line-height: calc(32px * var(--container-scale));
+  font-size: calc(18.83px * var(--container-scale) * var(--card-scale));
+  line-height: calc(32px * var(--container-scale) * var(--card-scale));
   color: var(--color-primary);
 }
 
 .home__event-meta-item svg {
-  width: calc(17px * var(--container-scale));
-  height: calc(17px * var(--container-scale));
+  width: calc(17px * var(--container-scale) * var(--card-scale));
+  height: calc(17px * var(--container-scale) * var(--card-scale));
   color: var(--color-primary);
   flex-shrink: 0;
 }
@@ -212,8 +215,8 @@
 
 .home__news-thumb {
   flex-shrink: 0;
-  width: calc(182px * var(--container-scale));
-  height: calc(106px * var(--container-scale));
+  width: calc(182px * var(--container-scale) * var(--card-scale));
+  height: calc(106px * var(--container-scale) * var(--card-scale));
   border-radius: 4px;
   background-color: var(--color-photo-placeholder);
   background-size: cover;
@@ -221,15 +224,19 @@
 }
 
 .home__news-title {
-  max-width: calc(318px * var(--container-scale));
-  font-size: calc(27.78px * var(--container-scale));
+  max-width: calc(318px * var(--container-scale) * var(--card-scale));
+  font-size: calc(27.78px * var(--container-scale) * var(--card-scale));
   font-weight: 400;
-  line-height: calc(37px * var(--container-scale));
+  line-height: calc(37px * var(--container-scale) * var(--card-scale));
   color: var(--color-primary);
 }
 
+/* Другий раунд компактизації, п.6: padding-bottom зменшено з 60px до 20px,
+   щоб прибрати зайвий порожній простір перед іконками футера (у футера
+   вже є власний top-padding 32px, разом дає достатній, але не надмірний
+   відступ). */
 .home__welcome {
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .home__welcome h2 {

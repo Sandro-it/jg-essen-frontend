@@ -17,6 +17,14 @@
   /* Однакова висота hero-банера на Головній і на підсторінках
      (Group 14 з Figma: 416px при ширині фрейму 1440px). */
   --hero-height: calc(416px * var(--container-scale));
+
+  /* Другий раунд компактизації (поверх --container-scale):
+     --tile-scale — навігаційні плитки вдвічі менші (п.2),
+     --card-scale — картки подій/новин компактніші (п.3),
+     --footer-icon-scale — іконки швидкого доступу трохи менші (п.7). */
+  --tile-scale: 0.5;
+  --card-scale: 0.75;
+  --footer-icon-scale: 0.85;
 }
 
 html,

@@ -1,5 +1,8 @@
+/* Другий раунд компактизації, п.6: margin-top зменшено з 48px до 16px —
+   разом зі зменшеним .home__welcome padding-bottom прибирає зайвий
+   порожній простір над іконками швидкого доступу. */
 .site-footer {
-  margin-top: 48px;
+  margin-top: 16px;
   border-top: 1px solid var(--color-border);
   background: var(--color-bg-alt);
 }
@@ -7,11 +10,13 @@
 /* Іконки швидкого доступу — прості емблеми-посилання, без кнопкових рамок.
    За Figma підпис не обгортається в 111px, а центрується під іконкою одним
    рядком (nowrap); ширина пункту підлаштовується під ширший з двох —
-   іконку чи підпис, — тому між пунктами потрібен запас по горизонталі. */
+   іконку чи підпис, — тому між пунктами потрібен запас по горизонталі.
+   Другий раунд компактизації, п.7: додатковий --footer-icon-scale (0.85). */
 .quick-access {
   display: flex;
   flex-wrap: wrap;
-  gap: calc(20px * var(--container-scale)) calc(28px * var(--container-scale));
+  gap: calc(20px * var(--container-scale) * var(--footer-icon-scale))
+    calc(28px * var(--container-scale) * var(--footer-icon-scale));
   padding: 32px 24px;
   justify-content: space-between;
 }
@@ -26,28 +31,28 @@
   color: var(--color-footer-icon);
 }
 
-/* 111px — розмір за Figma при дизайн-ширині 1440px; масштабується разом
-   з контейнером через --container-scale, як іконка-плитка на Головній. */
+/* 111px — розмір за Figma при дизайн-ширині 1440px; масштабується через
+   --container-scale і додатково --footer-icon-scale (п.7 другого раунду). */
 .quick-access__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(111px * var(--container-scale));
-  height: calc(111px * var(--container-scale));
+  width: calc(111px * var(--container-scale) * var(--footer-icon-scale));
+  height: calc(111px * var(--container-scale) * var(--footer-icon-scale));
   flex-shrink: 0;
 }
 
 .quick-access__icon svg {
-  width: calc(56px * var(--container-scale));
-  height: calc(56px * var(--container-scale));
+  width: calc(56px * var(--container-scale) * var(--footer-icon-scale));
+  height: calc(56px * var(--container-scale) * var(--footer-icon-scale));
   color: var(--color-footer-icon);
 }
 
 .quick-access__label {
   white-space: nowrap;
-  font-size: calc(20px * var(--container-scale));
+  font-size: calc(20px * var(--container-scale) * var(--footer-icon-scale));
   font-weight: 600;
-  line-height: calc(24px * var(--container-scale));
+  line-height: calc(24px * var(--container-scale) * var(--footer-icon-scale));
   color: var(--color-footer-icon);
 }
 
