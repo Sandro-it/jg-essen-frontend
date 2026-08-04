@@ -21,7 +21,7 @@
   },
   "nav": {
     "home": "Главная",
-    "unsereGemeinde": "О общине",
+    "unsereGemeinde": "Наша община",
     "glaubeTradition": "Вера и традиции",
     "gemeindeleben": "Жизнь общины",
     "sozialeHilfe": "Социальная помощь",
@@ -60,7 +60,7 @@
   },
   "sections": {
     "unsereGemeinde": {
-      "title": "О общине",
+      "title": "Наша община",
       "intro": {
         "menuLabel": "Про общину",
         "title": "Про общину",
