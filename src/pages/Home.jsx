@@ -49,13 +49,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <section className="home__hero" style={{ backgroundImage: `url(${heroBanner})` }}>
-        <div className="home__hero-scrim" aria-hidden="true" />
-        <div className="home__hero-textbox">
-          <h1>{t('home.heroTitle')}</h1>
-          <p>{t('home.heroText')}</p>
-        </div>
-      </section>
+      <section className="home__hero" style={{ backgroundImage: `url(${heroBanner})` }} />
 
       <section className="home__welcome container">
         <h2>{t('home.welcomeTitle')}</h2>

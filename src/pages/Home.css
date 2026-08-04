@@ -1,60 +1,9 @@
+/* Чисте фото будівлі, без жодного тексту чи затемнення поверх. */
 .home__hero {
-  position: relative;
   height: var(--hero-height);
   background-color: var(--color-photo-placeholder);
   background-size: cover;
   background-position: center;
-  color: #ffffff;
-}
-
-/* Rectangle 31/32 з Figma: лінійний градієнт сірий -> прозорий,
-   mix-blend-mode: multiply (не суцільна темна підкладка, а мультиплікативне
-   затемнення самого фото зліва направо). */
-.home__hero-scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #737373 0%, rgba(217, 217, 217, 0) 100%);
-  mix-blend-mode: multiply;
-}
-
-/* Горизонталь — за Figma (left:63px, ширина 387.33px при дизайн-ширині
-   1440px), помножено на --container-scale, щоб текстбокс стискався разом
-   з банером, а не хардкодився в px. По вертикалі — по центру hero-банера. */
-.home__hero-textbox {
-  position: absolute;
-  left: calc(63px * var(--container-scale));
-  top: 50%;
-  transform: translateY(-50%);
-  width: calc(387.33px * var(--container-scale));
-  min-height: calc(166px * var(--container-scale));
-  /* Непрозора підкладка — фото під нею містить залишок тексту з вихідного
-     скріншота-макету, самого лише градієнта-скріму недостатньо, щоб
-     його приховати. */
-  background: rgba(4, 10, 22, 0.78);
-  padding: calc(12px * var(--container-scale)) calc(16px * var(--container-scale));
-  border-radius: 4px;
-}
-
-/* Один текстовий шар у Figma з двома розмірами всередині (звірено з
-   панеллю Typography): заголовок Semi Bold 26.06px, опис Regular 13.55px
-   при дизайн-ширині 1440px — масштабується разом з банером. */
-.home__hero-textbox h1 {
-  margin: 0 0 6px;
-  font-weight: 600;
-  font-size: calc(26.06px * var(--container-scale));
-  line-height: calc(32px * var(--container-scale));
-  color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-}
-
-.home__hero-textbox p {
-  margin: 0;
-  font-weight: 400;
-  font-size: calc(13.55px * var(--container-scale));
-  line-height: calc(18px * var(--container-scale));
-  color: #ffffff;
-  opacity: 0.92;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* layout-header-nav: 6 великих плиток-іконок прибрано з Головної —
