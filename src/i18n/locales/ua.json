@@ -21,7 +21,7 @@
   },
   "nav": {
     "home": "Головна",
-    "unsereGemeinde": "Про громаду",
+    "unsereGemeinde": "Наша громада",
     "glaubeTradition": "Віра і традиції",
     "gemeindeleben": "Життя громади",
     "sozialeHilfe": "Соціальна допомога",
@@ -60,7 +60,7 @@
   },
   "sections": {
     "unsereGemeinde": {
-      "title": "Про громаду",
+      "title": "Наша громада",
       "intro": {
         "menuLabel": "Про громаду",
         "title": "Про громаду",
