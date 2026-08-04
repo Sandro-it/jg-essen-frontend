@@ -20,7 +20,6 @@
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 12px;
   color: var(--color-primary);
 }
 
@@ -28,27 +27,11 @@
   text-decoration: none;
 }
 
-.site-header__logo {
-  font-size: 34px;
-  line-height: 1;
-  color: var(--color-primary);
-}
-
-.site-header__brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.site-header__title {
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.site-header__claim {
-  font-size: 12px;
-  color: var(--color-text-muted);
+/* Єдине зображення-логотип (менора + назва + слоган), замість окремих
+   тексту й іконки. */
+.site-header__logo-img {
+  height: 40px;
+  width: auto;
 }
 
 .site-header__controls {

@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
+import logo from '../assets/logo.png';
 import './Header.css';
 
 // За макетом глобального навігаційного меню в шапці немає — переходи між
@@ -14,13 +15,7 @@ export default function Header() {
     <header className="site-header">
       <div className="site-header__top container">
         <NavLink to="/" className="site-header__brand">
-          <span className="site-header__logo" aria-hidden="true">
-            ✡
-          </span>
-          <span className="site-header__brand-text">
-            <span className="site-header__title">{t('common.siteName')}</span>
-            <span className="site-header__claim">{t('common.siteClaim')}</span>
-          </span>
+          <img src={logo} alt={t('common.siteName')} className="site-header__logo-img" />
         </NavLink>
         <div className="site-header__controls">
           <LanguageSwitcher />
