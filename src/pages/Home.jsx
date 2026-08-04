@@ -63,7 +63,7 @@ export default function Home() {
         {HOME_TILES.map((tile) => (
           <Link key={tile.slug} to={`/${tile.slug}`} className="home__tile">
             <span>{t(`nav.${tile.navKey}`)}</span>
-            <TileIcon image={tile.image} color={tile.color} alt={t(`nav.${tile.navKey}`)} />
+            <TileIcon image={tile.image} alt={t(`nav.${tile.navKey}`)} />
           </Link>
         ))}
       </nav>

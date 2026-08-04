@@ -1,9 +1,9 @@
-import iconUnsereGemeinde from '../assets/tile-icons/unsere-gemeinde.png';
-import iconGlaubeTradition from '../assets/tile-icons/glaube-tradition.png';
-import iconGemeindeleben from '../assets/tile-icons/gemeindeleben.png';
-import iconSozialeHilfe from '../assets/tile-icons/soziale-hilfe.png';
-import iconVeranstaltungen from '../assets/tile-icons/veranstaltungen.png';
-import iconAktuelles from '../assets/tile-icons/aktuelles.png';
+import iconUnsereGemeinde from '../assets/icons/icon-unsere-gemeinde.png';
+import iconGlaubeTradition from '../assets/icons/icon-glaube-tradition.png';
+import iconGemeindeleben from '../assets/icons/icon-gemeindeleben.png';
+import iconSozialeHilfe from '../assets/icons/icon-soziale-hilfe.png';
+import iconVeranstaltungen from '../assets/icons/icon-veranstaltungen.png';
+import iconAktuelles from '../assets/icons/icon-aktuelles.png';
 
 // Конфігурація розділів типу SectionHub.
 // Кожен розділ рендериться компонентами SectionHub (/{slug}) та
@@ -66,15 +66,15 @@ export function getSectionBySlug(slug) {
 }
 
 // Порядок плиток на головній сторінці (2 колонки x 3 ряди), як у макеті "Головна".
-// image — фото-кроп з design-reference/Головна.png у круглій масці (131×131px),
-// color — власна кольорова підложка кожної плитки (Точна специфікація дизайну).
+// image — готова кругла іконка з макета (вітражне скло), без додаткового
+// CSS-оформлення навколо.
 export const HOME_TILES = [
-  { slug: 'unsere-gemeinde', navKey: 'unsereGemeinde', image: iconUnsereGemeinde, color: '#2c5f8a' },
-  { slug: 'glaube-tradition', navKey: 'glaubeTradition', image: iconGlaubeTradition, color: '#CE4D4D' },
-  { slug: 'gemeindeleben', navKey: 'gemeindeleben', image: iconGemeindeleben, color: '#1F3A79' },
-  { slug: 'soziale-hilfe', navKey: 'sozialeHilfe', image: iconSozialeHilfe, color: '#1f6f78' },
-  { slug: 'veranstaltungen', navKey: 'veranstaltungen', image: iconVeranstaltungen, color: '#c9433a' },
-  { slug: 'aktuelles', navKey: 'aktuelles', image: iconAktuelles, color: '#1b3d6d' },
+  { slug: 'unsere-gemeinde', navKey: 'unsereGemeinde', image: iconUnsereGemeinde },
+  { slug: 'glaube-tradition', navKey: 'glaubeTradition', image: iconGlaubeTradition },
+  { slug: 'gemeindeleben', navKey: 'gemeindeleben', image: iconGemeindeleben },
+  { slug: 'soziale-hilfe', navKey: 'sozialeHilfe', image: iconSozialeHilfe },
+  { slug: 'veranstaltungen', navKey: 'veranstaltungen', image: iconVeranstaltungen },
+  { slug: 'aktuelles', navKey: 'aktuelles', image: iconAktuelles },
 ];
 
 // 6 іконок швидкого доступу у футері (спільні для всього сайту).

@@ -87,23 +87,14 @@
 }
 
 /* 131px — розмір за Figma при дизайн-ширині 1440px; масштабується через
-   --container-scale і додатково --tile-scale (п.2 другого раунду). */
+   --container-scale і додатково --tile-scale (п.2 другого раунду). Саме
+   зображення з макета вже кругле — жодного додаткового оформлення
+   (фону, рамки, box-shadow) навколо нього не додаємо. */
 .tile-icon {
   flex-shrink: 0;
   width: calc(131px * var(--container-scale) * var(--tile-scale));
   height: calc(131px * var(--container-scale) * var(--tile-scale));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-}
-
-.tile-icon__photo {
-  width: calc(123px * var(--container-scale) * var(--tile-scale));
-  height: calc(123px * var(--container-scale) * var(--tile-scale));
-  border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Другий раунд компактизації, п.5: нижній padding зменшено (40px -> 16px),
