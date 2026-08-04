@@ -16,11 +16,6 @@ export const LANGUAGE_LABELS = {
   ru: 'RU',
 };
 
-export function getNextLanguage(current) {
-  const index = LANGUAGES.indexOf(current);
-  return LANGUAGES[(index + 1) % LANGUAGES.length];
-}
-
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)

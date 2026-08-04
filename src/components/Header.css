@@ -61,12 +61,44 @@
   gap: 10px;
 }
 
+/* Три окремі прапорці (DE, UA, RU) зліва направо, замість одного
+   циклічного перемикача — розмір узгоджений з .header-icon-button
+   (перемикач теми), щоб уся група контролів виглядала єдиним набором. */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.language-switcher__flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.language-switcher__flag:hover {
+  border-color: var(--color-primary);
+}
+
+.language-switcher__flag.is-active {
+  border-color: var(--color-primary);
+  border-width: 2px;
+  background: var(--color-surface);
+}
+
 .header-icon-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);

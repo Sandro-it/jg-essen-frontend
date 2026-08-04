@@ -1,21 +1,28 @@
 import { useTranslation } from 'react-i18next';
-import { getNextLanguage, LANGUAGE_LABELS } from '../i18n';
+import { LANGUAGES, LANGUAGE_LABELS } from '../i18n';
 import FlagIcon from './FlagIcon';
 
+// Три окремі прапорці зліва направо (DE, UA, RU) — клік на прапорець одразу
+// перемикає на ту мову, активна підсвічена рамкою (без циклічного перемикання).
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
   const current = i18n.resolvedLanguage || i18n.language;
-  const next = getNextLanguage(current);
 
   return (
-    <button
-      type="button"
-      className="header-icon-button language-switcher"
-      onClick={() => i18n.changeLanguage(next)}
-      aria-label={`${LANGUAGE_LABELS[current] || current.toUpperCase()} — switch language to ${LANGUAGE_LABELS[next]}`}
-      title={LANGUAGE_LABELS[current] || current.toUpperCase()}
-    >
-      <FlagIcon lang={current} />
-    </button>
+    <div className="language-switcher" role="group" aria-label="Language">
+      {LANGUAGES.map((lang) => (
+        <button
+          key={lang}
+          type="button"
+          className={`language-switcher__flag${lang === current ? ' is-active' : ''}`}
+          onClick={() => i18n.changeLanguage(lang)}
+          aria-pressed={lang === current}
+          aria-label={LANGUAGE_LABELS[lang]}
+          title={LANGUAGE_LABELS[lang]}
+        >
+          <FlagIcon lang={lang} />
+        </button>
+      ))}
+    </div>
   );
 }
