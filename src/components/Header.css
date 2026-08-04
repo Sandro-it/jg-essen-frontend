@@ -21,7 +21,6 @@
 .site-header__brand {
   display: flex;
   align-items: center;
-  gap: 8px;
   color: var(--color-primary);
 }
 
@@ -29,30 +28,12 @@
   text-decoration: none;
 }
 
-.site-header__logo {
-  font-size: 22px;
-  line-height: 1;
-  color: var(--color-primary);
-}
-
-.site-header__brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Другий раунд компактизації, п.1: назва сайту зменшена з 30px до 20px —
-   близько до розміру тексту навігаційних плиток (.home__tile). */
-.site-header__title {
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.site-header__claim {
-  font-size: 11px;
-  color: var(--color-text-muted);
+/* Єдине зображення-логотип (менора + назва + слоган), замість окремих
+   тексту й іконки. Трохи нижче за main (40px) — узгоджено з компактнішим
+   padding шапки (8px замість 14px). */
+.site-header__logo-img {
+  height: 34px;
+  width: auto;
 }
 
 .site-header__controls {

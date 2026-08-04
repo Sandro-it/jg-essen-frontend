@@ -5,7 +5,7 @@ import { Clock, MapPin } from 'lucide-react';
 import { HOME_TILES } from '../data/sections';
 import { fetchLatestNews, fetchUpcomingEvents, getMediaUrl } from '../api/strapi';
 import TileIcon from '../components/TileIcon';
-import heroBuilding from '../assets/hero-building.jpg';
+import heroBanner from '../assets/hero-banner.jpg';
 import './Home.css';
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <section className="home__hero" style={{ backgroundImage: `url(${heroBuilding})` }}>
+      <section className="home__hero" style={{ backgroundImage: `url(${heroBanner})` }}>
         <div className="home__hero-scrim" aria-hidden="true" />
         <div className="home__hero-textbox">
           <h1>{t('home.heroTitle')}</h1>
