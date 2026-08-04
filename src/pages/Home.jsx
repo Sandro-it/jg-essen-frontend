@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Clock, MapPin } from 'lucide-react';
-import { HOME_TILES } from '../data/sections';
 import { fetchLatestNews, fetchUpcomingEvents, getMediaUrl } from '../api/strapi';
-import TileIcon from '../components/TileIcon';
 import heroBuilding from '../assets/hero-building.jpg';
 import './Home.css';
 
@@ -59,14 +57,12 @@ export default function Home() {
         </div>
       </section>
 
-      <nav className="home__tiles" aria-label={t('nav.home')}>
-        {HOME_TILES.map((tile) => (
-          <Link key={tile.slug} to={`/${tile.slug}`} className="home__tile">
-            <span>{t(`nav.${tile.navKey}`)}</span>
-            <TileIcon image={tile.image} color={tile.color} alt={t(`nav.${tile.navKey}`)} />
-          </Link>
+      <section className="home__welcome container">
+        <h2>{t('home.welcomeTitle')}</h2>
+        {t('home.welcomeParagraphs', { returnObjects: true }).map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
         ))}
-      </nav>
+      </section>
 
       <section className="home__lists container">
         <div className="home__list">
@@ -142,13 +138,6 @@ export default function Home() {
           )}
           <Link to="/aktuelles">{t('common.showFullArchive')} →</Link>
         </div>
-      </section>
-
-      <section className="home__welcome container">
-        <h2>{t('home.welcomeTitle')}</h2>
-        {t('home.welcomeParagraphs', { returnObjects: true }).map((paragraph, index) => (
-          <p key={index}>{paragraph}</p>
-        ))}
       </section>
     </div>
   );

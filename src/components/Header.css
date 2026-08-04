@@ -2,10 +2,42 @@
   background: var(--color-bg);
 }
 
-/* Rectangle 30 з Figma: 1440x53px, #091C3F */
-.site-header__accent-bar {
-  height: 53px;
+/* Синя плашка (раніше Rectangle 30 з Figma, порожня) тепер несе
+   горизонтальне навігаційне меню — фон той самий #091C3F. */
+.site-header__nav {
   background: #091c3f;
+}
+
+.site-header__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 20px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 24px;
+}
+
+.site-header__nav-link {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+  padding: 2px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header__nav-link:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.site-header__nav-link.is-active {
+  opacity: 1;
+  border-bottom-color: #ffffff;
 }
 
 /* Другий раунд компактизації, п.4: padding шапки зменшено з 14px до 8px. */
