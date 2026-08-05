@@ -76,11 +76,15 @@
   flex-direction: column;
 }
 
+/* 20px виявився занадто великим — "ESSEN" виступав за правий край
+   .site-header__claim під ним (у заголовка й підпису різна кількість
+   символів і вага шрифту, тож 1:1 по ширині вони й не збігались).
+   13px + без letter-spacing зводить різницю до ~10px, що вже не читається
+   як "текст, що стирчить". */
 .site-header__title {
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
+  font-size: 13px;
+  line-height: 1.2;
   text-transform: uppercase;
   color: var(--color-primary);
 }
