@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
-import logo from '../assets/logo.png';
+import menorahIcon from '../assets/menorah-icon.svg';
+import menorahIconWhite from '../assets/menorah-icon-white.svg';
 import './Header.css';
 
 const NAV_LINKS = [
@@ -19,12 +21,22 @@ const NAV_LINKS = [
 // самий елемент шапки, що й раніше був над hero-фото на кожній сторінці.
 export default function Header() {
   const { t } = useTranslation();
+  const { theme } = useTheme();
 
   return (
     <header className="site-header">
       <div className="site-header__top container">
         <NavLink to="/" className="site-header__brand">
-          <img src={logo} alt={t('common.siteName')} className="site-header__logo-img" />
+          <img
+            src={theme === 'dark' ? menorahIconWhite : menorahIcon}
+            alt=""
+            aria-hidden="true"
+            className="site-header__logo-icon"
+          />
+          <span className="site-header__brand-text">
+            <span className="site-header__title">{t('common.siteName')}</span>
+            <span className="site-header__claim">{t('common.siteClaim')}</span>
+          </span>
         </NavLink>
         <div className="site-header__controls">
           <LanguageSwitcher />

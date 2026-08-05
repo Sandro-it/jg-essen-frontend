@@ -53,6 +53,7 @@
 .site-header__brand {
   display: flex;
   align-items: center;
+  gap: 8px;
   color: var(--color-primary);
 }
 
@@ -60,12 +61,33 @@
   text-decoration: none;
 }
 
-/* Єдине зображення-логотип (менора + назва + слоган), замість окремих
-   тексту й іконки. Трохи нижче за main (40px) — узгоджено з компактнішим
-   padding шапки (8px замість 14px). */
-.site-header__logo-img {
+/* SVG-менора замість растрового логотипа: два файли (синій/білий),
+   перемикання за темою в Header.jsx. Висота підібрана під той самий
+   візуальний масштаб, що був у растрового логотипа (34px) — приблизно
+   дорівнює висоті стовпчика з назвою + підписом поруч. */
+.site-header__logo-icon {
   height: 34px;
   width: auto;
+  flex-shrink: 0;
+}
+
+.site-header__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.site-header__claim {
+  font-size: 11px;
+  color: var(--color-text-muted);
 }
 
 .site-header__controls {
