@@ -1,6 +1,8 @@
 .section-hub__hero {
   height: var(--hero-height);
-  background: var(--color-photo-placeholder);
+  background-color: var(--color-photo-placeholder);
+  background-size: cover;
+  background-position: center;
 }
 
 /* Узгоджено з компактним масштабом Головної (layout-compact): H1 (22px) >

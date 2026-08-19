@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getSectionBySlug } from '../data/sections';
+import { getSectionBySlug, getHeroImage } from '../data/sections';
 import SectionMenu from './SectionMenu';
 import NotFound from '../pages/NotFound';
 import './SectionHub.css';
@@ -14,9 +14,15 @@ export default function SectionHub({ slug }) {
 
   if (!section) return <NotFound />;
 
+  const heroImage = getHeroImage(section.slug);
+
   return (
     <div className="section-hub">
-      <div className="section-hub__hero" aria-hidden="true" />
+      <div
+        className="section-hub__hero"
+        style={heroImage ? { backgroundImage: `url(${heroImage})` } : undefined}
+        aria-hidden="true"
+      />
       <div className="container">
         <h1>{t(`${section.i18nKey}.title`)}</h1>
         <SectionMenu section={section} />

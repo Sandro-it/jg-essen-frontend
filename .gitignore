@@ -15,6 +15,7 @@ dist-ssr
 
 # Локальні референс-скріншоти макету з Figma (не в git-історії)
 design-reference/
+src/assets/x2*/
 
 # Editor directories and files
 .vscode/*

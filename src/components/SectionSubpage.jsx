@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { getSectionBySlug } from '../data/sections';
+import { getSectionBySlug, getHeroImage } from '../data/sections';
 import SectionMenu from './SectionMenu';
 import NotFound from '../pages/NotFound';
 import './SectionHub.css';
@@ -16,10 +16,15 @@ export default function SectionSubpage() {
   if (!section || !section.itemSlugs.includes(itemSlug)) return <NotFound />;
 
   const base = `${section.i18nKey}.items.${itemSlug}`;
+  const heroImage = getHeroImage(section.slug, itemSlug);
 
   return (
     <div className="section-hub">
-      <div className="section-hub__hero" aria-hidden="true" />
+      <div
+        className="section-hub__hero"
+        style={heroImage ? { backgroundImage: `url(${heroImage})` } : undefined}
+        aria-hidden="true"
+      />
       <div className="container">
         <SectionMenu section={section} />
 
