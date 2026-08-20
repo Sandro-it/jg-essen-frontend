@@ -78,3 +78,48 @@ export async function fetchEventById(id) {
   });
   return data.data[0] || null;
 }
+
+// --- JEZ (тестовий розділ "JEZ — можна слухати") ---
+
+export async function fetchJezIssues() {
+  const { data } = await strapiClient.get('/jez-issues', {
+    params: {
+      sort: 'number:desc',
+      populate: 'coverImage',
+    },
+  });
+  return data.data;
+}
+
+export async function fetchJezIssueById(id) {
+  const { data } = await strapiClient.get('/jez-issues', {
+    params: {
+      'filters[id][$eq]': id,
+      populate: ['coverImage', 'issuePdf'],
+    },
+  });
+  return data.data[0] || null;
+}
+
+export async function fetchJezArticlesByIssue(issueId) {
+  const { data } = await strapiClient.get('/jez-articles', {
+    params: {
+      'filters[issue][id][$eq]': issueId,
+      sort: 'sortOrder:asc',
+      populate: ['image', 'audioFile', 'articlePdf'],
+    },
+  });
+  return data.data;
+}
+
+// issue тут популюється лише "мілко" (номер/назва/дата для підпису) —
+// PDF випуску окремо через fetchJezIssueById(article.issue.id), якщо потрібен.
+export async function fetchJezArticleBySlug(slug) {
+  const { data } = await strapiClient.get('/jez-articles', {
+    params: {
+      'filters[slug][$eq]': slug,
+      populate: ['image', 'audioFile', 'articlePdf', 'issue'],
+    },
+  });
+  return data.data[0] || null;
+}
