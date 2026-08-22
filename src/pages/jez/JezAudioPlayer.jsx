@@ -77,7 +77,7 @@ export default function JezAudioPlayer({ src, fallbackDurationSeconds = 0 }) {
           type="button"
           className="jez-player__skip"
           onClick={() => skip(-SKIP_SECONDS)}
-          aria-label={`Назад на ${SKIP_SECONDS} секунд`}
+          aria-label={`${SKIP_SECONDS} Sekunden zurück`}
         >
           «{SKIP_SECONDS}
         </button>
@@ -86,7 +86,7 @@ export default function JezAudioPlayer({ src, fallbackDurationSeconds = 0 }) {
           type="button"
           className="jez-player__play"
           onClick={togglePlay}
-          aria-label={isPlaying ? 'Пауза' : 'Відтворити'}
+          aria-label={isPlaying ? 'Pause' : 'Abspielen'}
         >
           {isPlaying ? (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -104,7 +104,7 @@ export default function JezAudioPlayer({ src, fallbackDurationSeconds = 0 }) {
           type="button"
           className="jez-player__skip"
           onClick={() => skip(SKIP_SECONDS)}
-          aria-label={`Вперед на ${SKIP_SECONDS} секунд`}
+          aria-label={`${SKIP_SECONDS} Sekunden vor`}
         >
           {SKIP_SECONDS}»
         </button>
@@ -120,7 +120,7 @@ export default function JezAudioPlayer({ src, fallbackDurationSeconds = 0 }) {
             value={currentTime}
             onChange={onSeek}
             style={{ '--jez-progress': `${progressPercent}%` }}
-            aria-label="Позиція відтворення"
+            aria-label="Wiedergabeposition"
           />
           <span className="jez-player__time jez-player__time--end">{formatDuration(duration)}</span>
         </div>

@@ -59,8 +59,8 @@ export default function JezArticleDetail() {
   }, [articleSlug]);
 
   if (status === 'notfound') return <NotFound />;
-  if (status === 'loading') return <p className="jez-state">Завантаження…</p>;
-  if (status === 'error') return <p className="jez-state">Не вдалося завантажити статтю.</p>;
+  if (status === 'loading') return <p className="jez-state">Wird geladen…</p>;
+  if (status === 'error') return <p className="jez-state">Artikel konnte nicht geladen werden.</p>;
 
   const item = article.attributes || article;
   const audioUrl = getMediaUrl(item.audioFile);
@@ -70,7 +70,7 @@ export default function JezArticleDetail() {
   return (
     <div>
       <Link to={`/jez-test/${issueId}`} className="jez-back">
-        ← До випуску
+        ← Zur Ausgabe
       </Link>
 
       <h1 className="jez-title">{item.title}</h1>
@@ -82,8 +82,8 @@ export default function JezArticleDetail() {
         )}
         {issueRef && (
           <>
-            Випуск №{issueRef.number}
-            {issueRef.issueDate ? `, ${new Date(issueRef.issueDate).toLocaleDateString('uk-UA')}` : ''}
+            Ausgabe Nr. {issueRef.number}
+            {issueRef.issueDate ? `, ${new Date(issueRef.issueDate).toLocaleDateString('de-DE')}` : ''}
           </>
         )}
       </p>
@@ -91,18 +91,18 @@ export default function JezArticleDetail() {
       {audioUrl ? (
         <section className="jez-player-card">
           <div className="jez-player-card__label">
-            <span className="jez-player-card__kicker">СЛУХАТИ JEZ</span>
-            <span className="jez-player-card__hint">Аудіоверсія цієї статті</span>
+            <span className="jez-player-card__kicker">JEZ HÖREN</span>
+            <span className="jez-player-card__hint">Audioversion dieses Artikels</span>
           </div>
           <JezAudioPlayer src={audioUrl} fallbackDurationSeconds={item.durationSeconds} />
         </section>
       ) : (
-        <p className="jez-state">Аудіоверсія для цієї статті ще не завантажена.</p>
+        <p className="jez-state">Für diesen Artikel ist noch keine Audioversion vorhanden.</p>
       )}
 
       {item.description && (
         <section className="jez-article-detail__description">
-          <h2>О статье</h2>
+          <h2>Über den Artikel</h2>
           <ReactMarkdown>{item.description}</ReactMarkdown>
         </section>
       )}
@@ -111,13 +111,19 @@ export default function JezArticleDetail() {
         {articlePdfUrl && (
           <a className="jez-download-link" href={articlePdfUrl} target="_blank" rel="noreferrer">
             <DownloadIcon />
-            Читать статью (PDF)
+            Artikel lesen (PDF)
           </a>
         )}
         {issuePdfUrl && (
-          <a className="jez-download-link" href={issuePdfUrl} target="_blank" rel="noreferrer">
+          <a
+            className="jez-download-link"
+            href={withCloudinaryAttachment(issuePdfUrl)}
+            download
+            target="_blank"
+            rel="noreferrer"
+          >
             <DownloadIcon />
-            Скачать выпуск (PDF)
+            Ausgabe herunterladen (PDF)
           </a>
         )}
         {audioUrl && (
@@ -129,7 +135,7 @@ export default function JezArticleDetail() {
             rel="noreferrer"
           >
             <DownloadIcon />
-            Завантажити аудіо (MP3)
+            Audio herunterladen (MP3)
           </a>
         )}
       </div>

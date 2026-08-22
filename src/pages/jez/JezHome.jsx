@@ -66,15 +66,15 @@ export default function JezHome() {
             <rect x="3" y="13" width="4" height="6" rx="1.5" />
           </svg>
         </h1>
-        <p className="jez-hero__subtitle">теперь можно слушать!</p>
+        <p className="jez-hero__subtitle">Jetzt auch zum Hören!</p>
       </section>
 
       <section className="jez-issues-section">
-        <h2 className="jez-section-title">Виберіть випуск</h2>
+        <h2 className="jez-section-title">Ausgabe wählen</h2>
 
-        {issuesStatus === 'loading' && <p className="jez-state">Завантаження…</p>}
-        {issuesStatus === 'error' && <p className="jez-state">Не вдалося завантажити випуски.</p>}
-        {issuesStatus === 'done' && issues.length === 0 && <p className="jez-state">Поки що немає жодного випуску.</p>}
+        {issuesStatus === 'loading' && <p className="jez-state">Wird geladen…</p>}
+        {issuesStatus === 'error' && <p className="jez-state">Ausgaben konnten nicht geladen werden.</p>}
+        {issuesStatus === 'done' && issues.length === 0 && <p className="jez-state">Noch keine Ausgabe vorhanden.</p>}
 
         {issuesStatus === 'done' && issues.length > 0 && (
           <ul className="jez-issues-row">
@@ -98,7 +98,7 @@ export default function JezHome() {
                       <span className="jez-issue-card__number">№{item.number}</span>
                       {item.issueDate && (
                         <span className="jez-issue-card__date">
-                          {new Date(item.issueDate).toLocaleDateString('uk-UA', { month: 'long', year: 'numeric' })}
+                          {new Date(item.issueDate).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
                         </span>
                       )}
                     </span>
@@ -112,12 +112,12 @@ export default function JezHome() {
 
       {selectedIssueId && (
         <section className="jez-articles-section">
-          <h2 className="jez-section-title">Статті випуску №{selectedIssueItem?.number ?? ''}</h2>
+          <h2 className="jez-section-title">Artikel der Ausgabe Nr. {selectedIssueItem?.number ?? ''}</h2>
 
-          {articlesStatus === 'loading' && <p className="jez-state">Завантаження…</p>}
-          {articlesStatus === 'error' && <p className="jez-state">Не вдалося завантажити статті.</p>}
+          {articlesStatus === 'loading' && <p className="jez-state">Wird geladen…</p>}
+          {articlesStatus === 'error' && <p className="jez-state">Artikel konnten nicht geladen werden.</p>}
           {articlesStatus === 'done' && articles.length === 0 && (
-            <p className="jez-state">У цьому випуску поки немає озвучених статей.</p>
+            <p className="jez-state">Für diese Ausgabe gibt es noch keine vertonten Artikel.</p>
           )}
 
           {articlesStatus === 'done' && articles.length > 0 && (

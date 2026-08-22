@@ -9,7 +9,7 @@ export default function JezLayout() {
   return (
     <div className="jez">
       <header className="jez-header">
-        <button type="button" className="jez-header__icon-btn" aria-label="Меню">
+        <button type="button" className="jez-header__icon-btn" aria-label="Menü">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <path d="M3 6h18M3 12h18M3 18h18" />
           </svg>
@@ -19,7 +19,7 @@ export default function JezLayout() {
           JÜDISCHE GEMEINDE ESSEN
         </Link>
 
-        <button type="button" className="jez-header__icon-btn" aria-label="Пошук">
+        <button type="button" className="jez-header__icon-btn" aria-label="Suche">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
             <path d="M21 21l-4.35-4.35" />
