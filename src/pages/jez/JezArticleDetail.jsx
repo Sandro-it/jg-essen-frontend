@@ -5,6 +5,24 @@ import { fetchJezArticleBySlug, fetchJezIssueById, getMediaUrl } from '../../api
 import JezAudioPlayer from './JezAudioPlayer';
 import NotFound from '../NotFound';
 
+// HTML-атрибут download браузери ігнорують для cross-origin посилань (а
+// Cloudinary CDN завжди cross-origin) — натомість Cloudinary форсує
+// Content-Disposition: attachment через fl_attachment у самому URL.
+function withCloudinaryAttachment(url) {
+  if (!url) return url;
+  return url.includes('/upload/') ? url.replace('/upload/', '/upload/fl_attachment/') : url;
+}
+
+function DownloadIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3v12" />
+      <path d="M7 10l5 5 5-5" />
+      <path d="M5 21h14" />
+    </svg>
+  );
+}
+
 export default function JezArticleDetail() {
   const { issueId, articleSlug } = useParams();
   const [article, setArticle] = useState(null);
@@ -71,7 +89,13 @@ export default function JezArticleDetail() {
       </p>
 
       {audioUrl ? (
-        <JezAudioPlayer src={audioUrl} fallbackDurationSeconds={item.durationSeconds} />
+        <section className="jez-player-card">
+          <div className="jez-player-card__label">
+            <span className="jez-player-card__kicker">СЛУХАТИ JEZ</span>
+            <span className="jez-player-card__hint">Аудіоверсія цієї статті</span>
+          </div>
+          <JezAudioPlayer src={audioUrl} fallbackDurationSeconds={item.durationSeconds} />
+        </section>
       ) : (
         <p className="jez-state">Аудіоверсія для цієї статті ще не завантажена.</p>
       )}
@@ -86,12 +110,26 @@ export default function JezArticleDetail() {
       <div className="jez-article-detail__downloads">
         {articlePdfUrl && (
           <a className="jez-download-link" href={articlePdfUrl} target="_blank" rel="noreferrer">
+            <DownloadIcon />
             Читать статью (PDF)
           </a>
         )}
         {issuePdfUrl && (
           <a className="jez-download-link" href={issuePdfUrl} target="_blank" rel="noreferrer">
+            <DownloadIcon />
             Скачать выпуск (PDF)
+          </a>
+        )}
+        {audioUrl && (
+          <a
+            className="jez-download-link"
+            href={withCloudinaryAttachment(audioUrl)}
+            download
+            target="_blank"
+            rel="noreferrer"
+          >
+            <DownloadIcon />
+            Завантажити аудіо (MP3)
           </a>
         )}
       </div>

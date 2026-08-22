@@ -1,7 +1,11 @@
 /* Ізольована тема тестового розділу "JEZ — можна слухати" — свідомо відмінна
    від навігаційно-синьої палітри основного сайту (макет: темний хедер,
    помаранчевий акцент, білі картки). Змінні скопійовані в .jez, не в :root,
-   щоб не впливати на решту сайту. */
+   щоб не впливати на решту сайту.
+
+   Mobile-first: базові правила (без медіа-запитів) розраховані на вузький
+   екран (~375-390px, як у макеті). Блоки @media (min-width: ...) внизу файлу
+   лише РОЗШИРЮЮТЬ базові стилі для планшета (640px+) і десктопа (1024px+). */
 .jez {
   --jez-bg-page: #f4f1ec;
   --jez-bg-dark: #1c1f26;
@@ -18,40 +22,60 @@
   font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* --- Хедер: гамбургер / лого / пошук --- */
 .jez-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   background: var(--jez-bg-dark);
-  padding: 18px 24px;
+  padding: 12px 14px;
 }
 
-.jez-header__brand {
-  display: block;
-  max-width: 1000px;
-  margin: 0 auto;
+.jez-header__icon-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
   color: #ffffff;
-  font-size: 22px;
+  cursor: pointer;
+}
+
+.jez-header__icon-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.jez-header__logo {
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.jez-header__brand span {
-  color: var(--jez-accent);
-  font-weight: 600;
-}
-
-.jez-header__brand:hover {
+.jez-header__logo:hover {
   text-decoration: none;
   opacity: 0.9;
 }
 
 .jez-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 28px 24px 64px;
+  padding: 20px 16px 48px;
 }
 
 .jez-back {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: var(--jez-text-muted);
   font-size: 14px;
   font-weight: 500;
@@ -64,49 +88,107 @@
 
 .jez-title {
   color: var(--jez-accent-dark);
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 800;
   margin: 0 0 6px;
 }
 
 .jez-subtitle {
   color: var(--jez-text-muted);
-  font-size: 15px;
-  margin: 0 0 28px;
+  font-size: 14px;
+  margin: 0 0 24px;
 }
 
 .jez-state {
   color: var(--jez-text-muted);
-  padding: 40px 0;
+  padding: 32px 0;
   text-align: center;
 }
 
-/* --- Список випусків (карточки-обкладинки) --- */
-.jez-issues-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-  list-style: none;
+/* --- Головний екран: "JEZ" + навушники + помаранчевий підзаголовок --- */
+.jez-hero {
+  text-align: center;
+  padding: 8px 0 22px;
+}
+
+.jez-hero__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--jez-text);
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
   margin: 0;
-  padding: 0;
+}
+
+.jez-hero__title svg {
+  color: var(--jez-accent);
+  flex: 0 0 auto;
+}
+
+.jez-hero__subtitle {
+  color: var(--jez-accent);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 4px 0 0;
+}
+
+.jez-section-title {
+  color: var(--jez-text);
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.jez-issues-section {
+  margin-bottom: 28px;
+}
+
+/* --- Карусель випусків: горизонтальний скрол на мобільному --- */
+.jez-issues-row {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  gap: 12px;
+  list-style: none;
+  margin: 0 -16px;
+  padding: 2px 16px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.jez-issues-row li {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 
 .jez-issue-card {
   display: block;
+  width: 118px;
+  border: 2px solid transparent;
   background: var(--jez-card-bg);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
   box-shadow: 0 2px 10px rgba(28, 31, 38, 0.08);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .jez-issue-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(28, 31, 38, 0.14);
-  text-decoration: none;
+}
+
+.jez-issue-card.is-active {
+  border-color: var(--jez-accent);
 }
 
 .jez-issue-card__cover {
+  display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   background-color: var(--jez-border);
@@ -115,41 +197,43 @@
 }
 
 .jez-issue-card__body {
-  padding: 12px 14px 16px;
+  display: block;
+  padding: 8px 10px 10px;
 }
 
 .jez-issue-card__number {
+  display: block;
   color: var(--jez-accent-dark);
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
-.jez-issue-card__title {
-  color: var(--jez-text);
-  font-size: 15px;
-  font-weight: 700;
+.jez-issue-card__date {
+  display: block;
+  color: var(--jez-text-muted);
+  font-size: 11px;
   margin-top: 2px;
 }
 
-/* --- Список статей випуску --- */
+/* --- Статті вибраного випуску --- */
 .jez-articles-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .jez-article-card {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   background: var(--jez-card-bg);
-  border-radius: 16px;
-  padding: 12px;
+  border-radius: 14px;
+  padding: 10px;
   box-shadow: 0 2px 10px rgba(28, 31, 38, 0.07);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
@@ -162,9 +246,9 @@
 
 .jez-article-card__thumb {
   flex: 0 0 auto;
-  width: 72px;
-  height: 72px;
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
   background-color: var(--jez-border);
   background-size: cover;
   background-position: center;
@@ -177,7 +261,7 @@
 
 .jez-article-card__title {
   color: var(--jez-text);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   margin: 0 0 4px;
   overflow: hidden;
@@ -186,14 +270,23 @@
 }
 
 .jez-article-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   color: var(--jez-text-muted);
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.jez-article-card__duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .jez-article-card__play {
   flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--jez-accent);
   color: #ffffff;
@@ -205,8 +298,8 @@
 /* --- Сторінка статті --- */
 .jez-article-detail__meta {
   color: var(--jez-text-muted);
-  font-size: 14px;
-  margin: 0 0 24px;
+  font-size: 13px;
+  margin: 0 0 20px;
 }
 
 .jez-article-detail__meta strong {
@@ -214,40 +307,45 @@
 }
 
 .jez-article-detail__description {
-  margin-top: 28px;
+  margin-top: 24px;
 }
 
 .jez-article-detail__description h2 {
   color: var(--jez-text);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
 }
 
 .jez-article-detail__description p {
   color: var(--jez-text);
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
 .jez-article-detail__downloads {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 28px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .jez-download-link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   background: var(--jez-card-bg);
   border: 1px solid var(--jez-border);
   border-radius: 10px;
-  padding: 10px 16px;
+  padding: 11px 14px;
   color: var(--jez-text);
   font-size: 14px;
   font-weight: 600;
+}
+
+.jez-download-link svg {
+  flex: 0 0 auto;
+  color: var(--jez-accent);
 }
 
 .jez-download-link:hover {
@@ -256,24 +354,50 @@
   text-decoration: none;
 }
 
+/* --- Картка плеєра: підпис "СЛУХАТИ JEZ" / "Аудіоверсія цієї статті" --- */
+.jez-player-card {
+  margin-bottom: 4px;
+}
+
+.jez-player-card__label {
+  margin-bottom: 10px;
+}
+
+.jez-player-card__kicker {
+  display: block;
+  color: var(--jez-accent-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.jez-player-card__hint {
+  display: block;
+  color: var(--jez-text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
 /* --- Аудіоплеєр --- */
 .jez-player {
   background: var(--jez-card-bg);
-  border-radius: 20px;
-  padding: 20px 22px 16px;
+  border-radius: 18px;
+  padding: 16px 14px 14px;
   box-shadow: 0 2px 14px rgba(28, 31, 38, 0.08);
 }
 
 .jez-player__top {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .jez-player__play {
   flex: 0 0 auto;
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--jez-accent);
   color: #ffffff;
@@ -291,8 +415,8 @@
 
 .jez-player__skip {
   flex: 0 0 auto;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: transparent;
   border: 1px solid var(--jez-border);
@@ -309,7 +433,8 @@
 }
 
 .jez-player__progress-wrap {
-  flex: 1 1 auto;
+  order: 1;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -318,10 +443,10 @@
 
 .jez-player__time {
   font-variant-numeric: tabular-nums;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--jez-text-muted);
   flex: 0 0 auto;
-  width: 42px;
+  width: 38px;
 }
 
 .jez-player__time--end {
@@ -367,7 +492,7 @@
 .jez-player__bottom {
   display: flex;
   justify-content: flex-end;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .jez-player__speeds {
@@ -392,12 +517,108 @@
   color: #ffffff;
 }
 
-@media (max-width: 480px) {
-  .jez-player__top {
+/* ==========================================================================
+   Планшет і ширше — розширюємо (не перевизначаємо) мобільну базу
+   ========================================================================== */
+@media (min-width: 640px) {
+  .jez-header {
+    padding: 16px 24px;
+  }
+
+  .jez-header__logo {
+    font-size: 15px;
+  }
+
+  .jez-main {
+    padding: 28px 24px 56px;
+  }
+
+  .jez-title {
+    font-size: 25px;
+  }
+
+  .jez-hero {
+    padding: 16px 0 28px;
+  }
+
+  .jez-hero__title {
+    font-size: 44px;
+  }
+
+  .jez-hero__subtitle {
+    font-size: 18px;
+  }
+
+  .jez-section-title {
+    font-size: 18px;
+  }
+
+  .jez-issue-card {
+    width: 140px;
+  }
+
+  .jez-article-card__thumb {
+    width: 68px;
+    height: 68px;
+  }
+
+  .jez-article-card__title {
+    font-size: 15px;
+  }
+
+  .jez-article-detail__downloads {
+    flex-direction: row;
     flex-wrap: wrap;
   }
+
+  .jez-download-link {
+    flex: 0 1 auto;
+  }
+
+  .jez-player {
+    padding: 20px 22px 16px;
+  }
+
   .jez-player__progress-wrap {
-    order: 1;
-    width: 100%;
+    order: 0;
+    width: auto;
+    flex: 1 1 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .jez-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  .jez-header > * {
+    max-width: 1000px;
+  }
+
+  .jez-header__logo {
+    font-size: 17px;
+    letter-spacing: 0.05em;
+  }
+
+  .jez-hero__title {
+    font-size: 52px;
+  }
+
+  .jez-issues-row {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    margin: 0;
+    padding: 2px 0 4px;
+  }
+
+  .jez-issue-card {
+    width: 150px;
+  }
+
+  .jez-article-card__thumb {
+    width: 72px;
+    height: 72px;
   }
 }

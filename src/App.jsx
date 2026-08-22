@@ -10,18 +10,19 @@ import SectionSubpage from './components/SectionSubpage';
 import TopLevelRouter from './pages/TopLevelRouter';
 import NotFound from './pages/NotFound';
 import JezLayout from './pages/jez/JezLayout';
-import JezIssuesList from './pages/jez/JezIssuesList';
-import JezArticlesList from './pages/jez/JezArticlesList';
+import JezHome from './pages/jez/JezHome';
 import JezArticleDetail from './pages/jez/JezArticleDetail';
 
 export default function App() {
   return (
     <Routes>
       {/* Ізольований демо-розділ "JEZ — можна слухати": власний хедер, поза
-          Layout основного сайту і поза головним меню — лише прямий лінк. */}
+          Layout основного сайту і поза головним меню — лише прямий лінк.
+          JezHome обслуговує і /jez-test, і старі /jez-test/:issueId посилання
+          (об'єднаний екран випусків+статей, без окремої проміжної сторінки). */}
       <Route element={<JezLayout />}>
-        <Route path="jez-test" element={<JezIssuesList />} />
-        <Route path="jez-test/:issueId" element={<JezArticlesList />} />
+        <Route path="jez-test" element={<JezHome />} />
+        <Route path="jez-test/:issueId" element={<JezHome />} />
         <Route path="jez-test/:issueId/:articleSlug" element={<JezArticleDetail />} />
       </Route>
 
