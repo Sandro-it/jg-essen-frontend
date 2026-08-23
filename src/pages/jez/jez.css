@@ -593,14 +593,16 @@
 }
 
 @media (min-width: 1024px) {
-  .jez-main {
+  /* Як .page-shell основного сайту — весь розділ (хедер разом із фоном, не
+     лише внутрішній контент) обмежений і центрований, а не розтягнутий у
+     всю ширину екрана. */
+  .jez {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 32px 24px 64px;
   }
 
-  .jez-header > * {
-    max-width: 1000px;
+  .jez-main {
+    padding: 32px 24px 64px;
   }
 
   .jez-hero__title img {
