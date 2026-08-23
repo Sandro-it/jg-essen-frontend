@@ -179,6 +179,15 @@
   border-color: var(--jez-accent);
 }
 
+.jez-issue-card.is-active .jez-issue-card__body {
+  background: var(--jez-accent);
+}
+
+.jez-issue-card.is-active .jez-issue-card__number,
+.jez-issue-card.is-active .jez-issue-card__date {
+  color: #ffffff;
+}
+
 .jez-issue-card__cover {
   display: block;
   width: 100%;
