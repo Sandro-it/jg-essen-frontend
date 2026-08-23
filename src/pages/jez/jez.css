@@ -1,16 +1,17 @@
-/* Ізольована тема тестового розділу "JEZ — можна слухати" — свідомо відмінна
-   від навігаційно-синьої палітри основного сайту (макет: темний хедер,
-   помаранчевий акцент, білі картки). Змінні скопійовані в .jez, не в :root,
+/* Ізольована тема розділу "JEZ — можна слухати" (макет: темний хедер,
+   синій акцент #1F3A79, білі картки). Змінні скопійовані в .jez, не в :root,
    щоб не впливати на решту сайту.
 
    Mobile-first: базові правила (без медіа-запитів) розраховані на вузький
    екран (~375-390px, як у макеті). Блоки @media (min-width: ...) внизу файлу
    лише РОЗШИРЮЮТЬ базові стилі для планшета (640px+) і десктопа (1024px+). */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 .jez {
   --jez-bg-page: #f4f1ec;
   --jez-bg-dark: #1c1f26;
-  --jez-accent: #ee7d31;
-  --jez-accent-dark: #d3691f;
+  --jez-accent: #1f3a79;
+  --jez-accent-dark: #16295c;
   --jez-card-bg: #ffffff;
   --jez-text: #21242b;
   --jez-text-muted: #6b7280;
@@ -19,7 +20,7 @@
   min-height: 100%;
   background: var(--jez-bg-page);
   color: var(--jez-text);
-  font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* --- Хедер: гамбургер / лого / пошук --- */
@@ -53,15 +54,16 @@
 .jez-header__logo {
   flex: 1 1 auto;
   min-width: 0;
-  text-align: center;
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jez-header__logo img {
+  display: block;
+  height: 20px;
+  width: auto;
+  max-width: 100%;
 }
 
 .jez-header__logo:hover {
@@ -78,7 +80,7 @@
   margin-bottom: 16px;
   color: var(--jez-text-muted);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .jez-back:hover {
@@ -89,7 +91,7 @@
 .jez-title {
   color: var(--jez-accent-dark);
   font-size: 21px;
-  font-weight: 800;
+  font-weight: 600;
   margin: 0 0 6px;
 }
 
@@ -105,7 +107,7 @@
   text-align: center;
 }
 
-/* --- Головний екран: "JEZ" + навушники + помаранчевий підзаголовок --- */
+/* --- Головний екран: лого JEZ + підзаголовок --- */
 .jez-hero {
   text-align: center;
   padding: 8px 0 22px;
@@ -115,30 +117,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  color: var(--jez-text);
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: 0.02em;
   margin: 0;
 }
 
-.jez-hero__title svg {
-  color: var(--jez-accent);
-  flex: 0 0 auto;
+.jez-hero__title img {
+  display: block;
+  height: 40px;
+  width: auto;
 }
 
 .jez-hero__subtitle {
   color: var(--jez-accent);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 4px 0 0;
 }
 
 .jez-section-title {
   color: var(--jez-text);
   font-size: 16px;
-  font-weight: 800;
+  font-weight: 600;
   margin: 0 0 12px;
 }
 
@@ -205,7 +203,7 @@
   display: block;
   color: var(--jez-accent-dark);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -244,6 +242,28 @@
   text-decoration: none;
 }
 
+.jez-show-more {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid var(--jez-border);
+  border-radius: 12px;
+  color: var(--jez-accent-dark);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.jez-show-more:hover {
+  border-color: var(--jez-accent);
+  background: rgba(31, 58, 121, 0.05);
+}
+
 .jez-article-card__thumb {
   flex: 0 0 auto;
   width: 56px;
@@ -262,7 +282,7 @@
 .jez-article-card__title {
   color: var(--jez-text);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 4px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -313,7 +333,7 @@
 .jez-article-detail__description h2 {
   color: var(--jez-text);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -367,7 +387,7 @@
   display: block;
   color: var(--jez-accent-dark);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -525,8 +545,8 @@
     padding: 16px 24px;
   }
 
-  .jez-header__logo {
-    font-size: 15px;
+  .jez-header__logo img {
+    height: 26px;
   }
 
   .jez-main {
@@ -541,8 +561,8 @@
     padding: 16px 0 28px;
   }
 
-  .jez-hero__title {
-    font-size: 44px;
+  .jez-hero__title img {
+    height: 52px;
   }
 
   .jez-hero__subtitle {
@@ -597,13 +617,12 @@
     max-width: 1000px;
   }
 
-  .jez-header__logo {
-    font-size: 17px;
-    letter-spacing: 0.05em;
+  .jez-header__logo img {
+    height: 30px;
   }
 
-  .jez-hero__title {
-    font-size: 52px;
+  .jez-hero__title img {
+    height: 60px;
   }
 
   .jez-issues-row {

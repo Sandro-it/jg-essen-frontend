@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { fetchJezArticlesByIssue, fetchJezIssues, getMediaUrl } from '../../api/strapi';
 import { formatDuration } from '../../utils/duration';
+import jezLogo from '../../assets/jez_logo.svg';
+
+const VISIBLE_ARTICLES_COUNT = 3;
 
 // Об'єднаний головний екран JEZ: карусель випусків + статті вибраного випуску
 // на одній сторінці (без переходу), за макетом клієнтки. Обслуговує і
@@ -14,6 +17,7 @@ export default function JezHome() {
   const [selectedIssueId, setSelectedIssueId] = useState(issueIdParam ? Number(issueIdParam) : null);
   const [articles, setArticles] = useState([]);
   const [articlesStatus, setArticlesStatus] = useState('loading');
+  const [articlesExpanded, setArticlesExpanded] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -38,6 +42,7 @@ export default function JezHome() {
     if (!selectedIssueId) return undefined;
     let cancelled = false;
     setArticlesStatus('loading');
+    setArticlesExpanded(false);
     fetchJezArticlesByIssue(selectedIssueId)
       .then((data) => {
         if (cancelled) return;
@@ -59,12 +64,7 @@ export default function JezHome() {
     <div>
       <section className="jez-hero">
         <h1 className="jez-hero__title">
-          JEZ
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M3 14v-2a9 9 0 0 1 18 0v2" />
-            <rect x="17" y="13" width="4" height="6" rx="1.5" />
-            <rect x="3" y="13" width="4" height="6" rx="1.5" />
-          </svg>
+          <img src={jezLogo} alt="JEZ — jetzt auch zum Hören" />
         </h1>
         <p className="jez-hero__subtitle">Jetzt auch zum Hören!</p>
       </section>
@@ -122,7 +122,7 @@ export default function JezHome() {
 
           {articlesStatus === 'done' && articles.length > 0 && (
             <ul className="jez-articles-list">
-              {articles.map((article) => {
+              {(articlesExpanded ? articles : articles.slice(0, VISIBLE_ARTICLES_COUNT)).map((article) => {
                 const item = article.attributes || article;
                 const thumbUrl = getMediaUrl(item.image);
                 return (
@@ -155,6 +155,12 @@ export default function JezHome() {
                 );
               })}
             </ul>
+          )}
+
+          {articlesStatus === 'done' && !articlesExpanded && articles.length > VISIBLE_ARTICLES_COUNT && (
+            <button type="button" className="jez-show-more" onClick={() => setArticlesExpanded(true)}>
+              ALLE ARTIKEL ANZEIGEN ▼
+            </button>
           )}
         </section>
       )}

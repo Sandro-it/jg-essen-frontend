@@ -1,10 +1,11 @@
 import { Link, Outlet } from 'react-router-dom';
+import communityLogo from '../../assets/lOGO.svg';
 import './jez.css';
 
-// Самостійна обгортка тестового розділу "JEZ — можна слухати" — власний темний
-// хедер з помаранчевим акцентом, без Header/Footer основного сайту (ізольований
-// демо-розділ, не в головному меню). Хедер за макетом: гамбургер-меню зліва,
-// лого громади по центру, пошук справа — суто косметика, без функціоналу.
+// Самостійна обгортка розділу "JEZ — можна слухати" — власний темний хедер
+// із синім акцентом, без Header/Footer основного сайту (ізольований розділ,
+// не в головному меню). Хедер за макетом: гамбургер-меню зліва, лого громади
+// по центру, пошук справа — суто косметика, без функціоналу.
 export default function JezLayout() {
   return (
     <div className="jez">
@@ -16,7 +17,7 @@ export default function JezLayout() {
         </button>
 
         <Link to="/jez-test" className="jez-header__logo">
-          JÜDISCHE GEMEINDE ESSEN
+          <img src={communityLogo} alt="Jüdische Gemeinde Essen" />
         </Link>
 
         <button type="button" className="jez-header__icon-btn" aria-label="Suche">
