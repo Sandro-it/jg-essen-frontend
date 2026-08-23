@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
 import { fetchJezArticleBySlug, fetchJezIssueById, getMediaUrl } from '../../api/strapi';
 import JezAudioPlayer from './JezAudioPlayer';
 import NotFound from '../NotFound';
@@ -100,18 +99,17 @@ export default function JezArticleDetail() {
         <p className="jez-state">Für diesen Artikel ist noch keine Audioversion vorhanden.</p>
       )}
 
-      {item.description && (
-        <section className="jez-article-detail__description">
-          <h2>Über den Artikel</h2>
-          <ReactMarkdown>{item.description}</ReactMarkdown>
-        </section>
-      )}
-
       <div className="jez-article-detail__downloads">
         {articlePdfUrl && (
           <a className="jez-download-link" href={articlePdfUrl} target="_blank" rel="noreferrer">
             <DownloadIcon />
             Artikel lesen (PDF)
+          </a>
+        )}
+        {issuePdfUrl && (
+          <a className="jez-download-link" href={issuePdfUrl} target="_blank" rel="noreferrer">
+            <DownloadIcon />
+            Ausgabe ansehen (PDF)
           </a>
         )}
         {issuePdfUrl && (
