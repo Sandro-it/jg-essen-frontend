@@ -117,14 +117,14 @@
 .jez-hero__title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0;
 }
 
 .jez-hero__title img {
   display: block;
-  height: 40px;
-  width: auto;
+  /* Нативний розмір SVG (521x175, з атрибутів width/height файлу) —
+     свідомо без CSS-обмеження висоти. */
 }
 
 .jez-section-title {
@@ -560,10 +560,6 @@
     padding: 16px 0 28px;
   }
 
-  .jez-hero__title img {
-    height: 52px;
-  }
-
   .jez-section-title {
     font-size: 18px;
   }
@@ -612,10 +608,6 @@
 
   .jez-main {
     padding: 32px 24px 64px;
-  }
-
-  .jez-hero__title img {
-    height: 60px;
   }
 
   .jez-issues-row {
