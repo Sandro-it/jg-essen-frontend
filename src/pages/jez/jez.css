@@ -1,6 +1,6 @@
-/* Ізольована тема розділу "JEZ — можна слухати" (макет: темний хедер,
-   синій акцент #1F3A79, білі картки). Змінні скопійовані в .jez, не в :root,
-   щоб не впливати на решту сайту.
+/* Ізольована тема розділу "JEZ — можна слухати" (макет: світлий хедер,
+   як на основному сайті, синій акцент #1F3A79, білі картки). Змінні
+   скопійовані в .jez, не в :root, щоб не впливати на решту сайту.
 
    Mobile-first: базові правила (без медіа-запитів) розраховані на вузький
    екран (~375-390px, як у макеті). Блоки @media (min-width: ...) внизу файлу
@@ -9,7 +9,7 @@
 
 .jez {
   --jez-bg-page: #f4f1ec;
-  --jez-bg-dark: #1c1f26;
+  --jez-header-bg: #ffffff;
   --jez-accent: #1f3a79;
   --jez-accent-dark: #16295c;
   --jez-card-bg: #ffffff;
@@ -29,7 +29,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background: var(--jez-bg-dark);
+  background: var(--jez-header-bg);
+  border-bottom: 1px solid var(--jez-border);
   padding: 12px 14px;
 }
 
@@ -43,12 +44,12 @@
   border: none;
   border-radius: 8px;
   background: transparent;
-  color: #ffffff;
+  color: var(--jez-accent);
   cursor: pointer;
 }
 
 .jez-header__icon-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(31, 58, 121, 0.08);
 }
 
 .jez-header__logo {
@@ -61,7 +62,7 @@
 
 .jez-header__logo img {
   display: block;
-  height: 20px;
+  height: 34px;
   width: auto;
   max-width: 100%;
 }
@@ -124,13 +125,6 @@
   display: block;
   height: 40px;
   width: auto;
-}
-
-.jez-hero__subtitle {
-  color: var(--jez-accent);
-  font-size: 16px;
-  font-weight: 600;
-  margin: 4px 0 0;
 }
 
 .jez-section-title {
@@ -545,10 +539,6 @@
     padding: 16px 24px;
   }
 
-  .jez-header__logo img {
-    height: 26px;
-  }
-
   .jez-main {
     padding: 28px 24px 56px;
   }
@@ -563,10 +553,6 @@
 
   .jez-hero__title img {
     height: 52px;
-  }
-
-  .jez-hero__subtitle {
-    font-size: 18px;
   }
 
   .jez-section-title {
@@ -615,10 +601,6 @@
 
   .jez-header > * {
     max-width: 1000px;
-  }
-
-  .jez-header__logo img {
-    height: 30px;
   }
 
   .jez-hero__title img {

@@ -66,7 +66,6 @@ export default function JezHome() {
         <h1 className="jez-hero__title">
           <img src={jezLogo} alt="JEZ — jetzt auch zum Hören" />
         </h1>
-        <p className="jez-hero__subtitle">Jetzt auch zum Hören!</p>
       </section>
 
       <section className="jez-issues-section">
